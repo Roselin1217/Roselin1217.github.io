@@ -60,7 +60,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-11-27 18:25:24',
+  postUpdate: '2025-11-27 18:25:48',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -210,45 +210,91 @@ if (true) {
 
 $$ d &amp;#x3D; \frac{v \times t_{total}}{2}$$
 
-$$\begin{aligned}d , (\text{cm}) &amp;amp;&amp;#x3D; \frac{340 , \text{m&amp;#x2F;s} \times (t \times 10^{-6} , \text{s})}{2} \times \frac{100 , \text{cm}}{1 , \text{m}} \&amp;amp;&amp;#x3D; 170 , \text{m&amp;#x2F;s} \times t \times 10^{-6} , \text{s} \times 100 , \text{cm&amp;#x2F;m} \&amp;amp;&amp;#x3D; 17000 , \text{cm&amp;#x2F;s} \times t \tim ...</div><a class="blog-slider__button" href="2025/11/24/10.超声波测距原理与实现/" alt="超声波测距">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2025/11/24/2.数码管显示原理与动态扫描实现/" title="数码管和定时器"><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/2.数码管显示原理与动态扫描实现..png" alt="图片" onerror="this.src=undefined; this.onerror = null;"></a><div class="blog-slider__content"><span class="blog-slider__code">2025-11-24</span><a class="blog-slider__title" href="2025/11/24/2.数码管显示原理与动态扫描实现/" alt="数码管和定时器">数码管和定时器</a><div class="blog-slider__text">**数码管和定时器 **一、数码管基本原理1. 数码管结构数码管本质上是由8个LED段（ag + 小数点dp）组合而成的显示器件，用于显示数字09及部分字母。
-根据内部连接方式，可分为两种类型：
+$$\begin{aligned}d , (\text{cm}) &amp;amp;&amp;#x3D; \frac{340 , \text{m&amp;#x2F;s} \times (t \times 10^{-6} , \text{s})}{2} \times \frac{100 , \text{cm}}{1 , \text{m}} \&amp;amp;&amp;#x3D; 170 , \text{m&amp;#x2F;s} \times t \times 10^{-6} , \text{s} \times 100 , \text{cm&amp;#x2F;m} \&amp;amp;&amp;#x3D; 17000 , \text{cm&amp;#x2F;s} \times t \tim ...</div><a class="blog-slider__button" href="2025/11/24/10.超声波测距原理与实现/" alt="超声波测距">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2025/11/27/11.内存管理/" title="内存管理"><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/11.内存管理.png" alt="图片" onerror="this.src=undefined; this.onerror = null;"></a><div class="blog-slider__content"><span class="blog-slider__code">2025-11-27</span><a class="blog-slider__title" href="2025/11/27/11.内存管理/" alt="内存管理">内存管理</a><div class="blog-slider__text">📝 内存管理一、什么是 RAM？（随机存取存储器）
+RAM (Random Access Memory)：掉电丢失的数据存储区。
+8051 系列的 片内 RAM 只有 128 字节 或 256 字节（极度珍贵！）。
+所有变量、栈、缓冲区都必须放在这 256 字节以内，因此 必须手动管理内存！
+
+二、Keil C51 各种存储类型对比（超级重点）
+
+
+关键字
+存放位置
+地址范围
+访问方式
+访问速度
+空间大小
+典型用途
 
 
 
+data
+片内 RAM 低 128 字节
+00H ~ 7FH
+直接寻址 &amp;#x2F; 间接寻址
+★★★★★
+~100 字节可用
+频繁访问的小变量、函数参数、栈
 
 
-类型
-阳极连接
-阴极连接
-控制方式
-亮灭逻辑
+idata
+片内 RAM 高 128 字节
+80H ~ FFH
+只能间接寻址 (@R0&amp;#x2F;@R1)
+★★★★
+128 字节
+数组、缓冲区、不太频繁访问的变量
+
+
+xdata
+片外扩展 RAM（如 6264）
+0000H ~ FFFFH
+MOVX 指令
+★★
+最大 64KB
+大数组、LCD 缓冲区、FAT 文件系统等
+
+
+pdata
+片外 RAM 低 256 字节
+0000H ~ 00FFH
+MOV ...</div><a class="blog-slider__button" href="2025/11/27/11.内存管理/" alt="内存管理">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2025/11/24/3.one_wire通信协议（DS18B20）/" title="单总线协议详解（DS18B20 ）"><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png" alt="图片" onerror="this.src=undefined; this.onerror = null;"></a><div class="blog-slider__content"><span class="blog-slider__code">2025-11-24</span><a class="blog-slider__title" href="2025/11/24/3.one_wire通信协议（DS18B20）/" alt="单总线协议详解（DS18B20 ）">单总线协议详解（DS18B20 ）</a><div class="blog-slider__text">​		
+单总线协议详解（DS18B20 ）
+一、单总线协议基础1.1 什么是单总线？单总线（1-Wire） 是 Dallas&amp;#x2F;Maxim 公司开发的一种串行通信协议。
+核心特点：
+
+✅ 只需 1 根数据线 Data Queue （DQ）+ 1 根地线（GND）
+✅ 支持多设备挂载（每个设备有唯一 64 位 ROM 码）
+✅ 半双工通信（同一时刻只能单向传输）
+✅ 主从架构（MCU 是主机，传感器是从机）
+
+硬件连接：
+1234567TEXT        VCC (3.3V/5V)         |        [R] 4.7kΩ 上拉电阻         |MCU -----+-------- DS18B20 (DQ)         |        GND
+
+
+1.2 开漏输出原理（重要！）单总线使用 开漏输出（Open-Drain） 模式：
 
 
 
-共阳极数码管
-所有LED阳极连在一起接VCC
-每段独立接驱动电路
-控制阴极电平
-0亮，1灭
-
-
-共阴极数码管
-每段独立接驱动电路
-所有LED阴极连在一起接地
-控制阳极电平
-1亮，0灭
+MCU 操作
+DQ 引脚状态
+实际电平
 
 
 
-✅ 本系统使用的是共阳极数码管（根据电路图与代码中0xc0, 0xf9...推断）因此：输出低电平 → 段点亮；输出高电平 → 段熄灭
+DQ = 0
+强制拉低
+低电平（0V）
 
-2. 段码表（共阳极数码管）3. 什么是“消影”？如何解决？❓ 什么是消影？在动态扫描显示中，当从一个数码管切换到另一个时，由于段码数据提前加载或位选信号延迟关闭，会导致前一个数码管在切换瞬间仍有残影（部分段微亮），这种现象称为**“消影”**（或“鬼影”）。
-✅ 消影产生的原因：
-位选（选中哪个数码管）与段选（显示什么数字）未严格同步；
-段码数据写入后，未先关闭所有位选就切换，造成短暂重叠。
 
-🔧 解决方法 ...</div><a class="blog-slider__button" href="2025/11/24/2.数码管显示原理与动态扫描实现/" alt="数码管和定时器">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2025/11/24/4.I2C协议(PCF8591)/" title="I2C 协议（PCF8591）"><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/4.PCF8951.png" alt="图片" onerror="this.src=undefined; this.onerror = null;"></a><div class="blog-slider__content"><span class="blog-slider__code">2025-11-24</span><a class="blog-slider__title" href="2025/11/24/4.I2C协议(PCF8591)/" alt="I2C 协议（PCF8591）">I2C 协议（PCF8591）</a><div class="blog-slider__text">I2C 协议（PCF8591）本文档记录了 I2C 通信协议的基础知识以及 PCF8591 芯片（8位AD&amp;#x2F;DA转换器）的应用细节。
-🏗️ 整体架构三层关系图1234567891011121314TEXT┌─────────────────────────────────────────┐│  应用层：PCF8591芯片                     ││  ├─ 硬件功能：4路AD + 1路DA              ││  ├─ 设备地址：0x90/0x91                 ││  └─ 控制逻辑：寄存器/控制字节            │├─────────────────────────────────────────┤│  通信层：I2C协议                         ││  ├─ 7个基础函数（通用所有I2C设备）       ││  └─ 时序：Start/Stop/应答/数据传输       │├─────────────────────────────────────────┤│  硬件层：51单片机GP ...</div><a class="blog-slider__button" href="2025/11/24/4.I2C协议(PCF8591)/" alt="I2C 协议（PCF8591）">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div><div id="topPostGroup"><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/22/0.Keil工程模板搭建指南/" title="单片机Keil工程模板搭建指南 (V4T)"><span class="top-group-text">荐</span><img class="post_bg" alt="单片机Keil工程模板搭建指南 (V4T)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/0.Keil工程模板搭建指南.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/22/0.Keil工程模板搭建指南/" title="单片机Keil工程模板搭建指南 (V4T)">单片机Keil工程模板搭建指南 (V4T)</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/24/10.超声波测距原理与实现/" title="超声波测距"><span class="top-group-text">荐</span><img class="post_bg" alt="超声波测距" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/10.蓝桥杯超声波测距封面.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/24/10.超声波测距原理与实现/" title="超声波测距">超声波测距</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/24/2.数码管显示原理与动态扫描实现/" title="数码管和定时器"><span class="top-group-text">荐</span><img class="post_bg" alt="数码管和定时器" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/2.数码管显示原理与动态扫描实现..png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/24/2.数码管显示原理与动态扫描实现/" title="数码管和定时器">数码管和定时器</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/24/4.I2C协议(PCF8591)/" title="I2C 协议（PCF8591）"><span class="top-group-text">荐</span><img class="post_bg" alt="I2C 协议（PCF8591）" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/4.PCF8951.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/24/4.I2C协议(PCF8591)/" title="I2C 协议（PCF8591）">I2C 协议（PCF8591）</a></div></div><div class="top-group-list-none"></div><div class="top-group-list-none"></div><div class="top-group-list-none"></div></div></div></div></div><script src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"></script><script>function initBlogSlider() {
+DQ = 1
+释放总线（高阻态）
+高电平（由上拉电阻决定）
+
+
+关键理解：
+
+DQ = 1 不是主动输出高电平，而是”松手”让上拉 ...</div><a class="blog-slider__button" href="2025/11/24/3.one_wire通信协议（DS18B20）/" alt="单总线协议详解（DS18B20 ）">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div><div id="topPostGroup"><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/22/0.Keil工程模板搭建指南/" title="单片机Keil工程模板搭建指南 (V4T)"><span class="top-group-text">荐</span><img class="post_bg" alt="单片机Keil工程模板搭建指南 (V4T)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/0.Keil工程模板搭建指南.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/22/0.Keil工程模板搭建指南/" title="单片机Keil工程模板搭建指南 (V4T)">单片机Keil工程模板搭建指南 (V4T)</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/24/10.超声波测距原理与实现/" title="超声波测距"><span class="top-group-text">荐</span><img class="post_bg" alt="超声波测距" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/10.蓝桥杯超声波测距封面.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/24/10.超声波测距原理与实现/" title="超声波测距">超声波测距</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/27/11.内存管理/" title="内存管理"><span class="top-group-text">荐</span><img class="post_bg" alt="内存管理" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/11.内存管理.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/27/11.内存管理/" title="内存管理">内存管理</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/24/3.one_wire通信协议（DS18B20）/" title="单总线协议详解（DS18B20 ）"><span class="top-group-text">荐</span><img class="post_bg" alt="单总线协议详解（DS18B20 ）" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/24/3.one_wire通信协议（DS18B20）/" title="单总线协议详解（DS18B20 ）">单总线协议详解（DS18B20 ）</a></div></div><div class="top-group-list-none"></div><div class="top-group-list-none"></div><div class="top-group-list-none"></div></div></div></div></div><script src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"></script><script>function initBlogSlider() {
   var swiper = new Swiper(".blog-slider", {
     passiveListeners: true,
     spaceBetween: 30,
@@ -353,7 +399,44 @@ MOV ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2
 
 $$ d &#x3D; \frac{v \times t_{total}}{2}$$
 
-$$\begin{aligned}d , (\text{cm}) &amp;&#x3D; \frac{340 , \text{m&#x2F;s} \times (t \times 10^{-6} , \text{s})}{2} \times \frac{100 , \text{cm}}{1 , \text{m}} \&amp;&#x3D; 170 , \text{m&#x2F;s} \times t \times 10^{-6} , \text{s} \times 100 , \text{cm&#x2F;m} \&amp;&#x3D; 17000 , \text{cm&#x2F;s} \times t \tim ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/')"><div class="post_cover left"><a href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/2.数码管显示原理与动态扫描实现..png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数码管和定时器" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">技术笔记</div><a class="unvisited-post" href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器">未读</a></div><a class="article-title" href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器">数码管和定时器</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:31:42.070Z" title="更新于 2025-11-24 22:31:42" time="2025-11-24 22:31:42">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">**数码管和定时器 **一、数码管基本原理1. 数码管结构数码管本质上是由8个LED段（ag + 小数点dp）组合而成的显示器件，用于显示数字09及部分字母。
+$$\begin{aligned}d , (\text{cm}) &amp;&#x3D; \frac{340 , \text{m&#x2F;s} \times (t \times 10^{-6} , \text{s})}{2} \times \frac{100 , \text{cm}}{1 , \text{m}} \&amp;&#x3D; 170 , \text{m&#x2F;s} \times t \times 10^{-6} , \text{s} \times 100 , \text{cm&#x2F;m} \&amp;&#x3D; 17000 , \text{cm&#x2F;s} \times t \tim ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/')"><div class="post_cover left"><a href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单总线协议详解（DS18B20 ）" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）">未读</a></div><a class="article-title" href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）">单总线协议详解（DS18B20 ）</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:33:23.443Z" title="更新于 2025-11-24 22:33:23" time="2025-11-24 22:33:23">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">​		
+单总线协议详解（DS18B20 ）
+一、单总线协议基础1.1 什么是单总线？单总线（1-Wire） 是 Dallas&#x2F;Maxim 公司开发的一种串行通信协议。
+核心特点：
+
+✅ 只需 1 根数据线 Data Queue （DQ）+ 1 根地线（GND）
+✅ 支持多设备挂载（每个设备有唯一 64 位 ROM 码）
+✅ 半双工通信（同一时刻只能单向传输）
+✅ 主从架构（MCU 是主机，传感器是从机）
+
+硬件连接：
+1234567TEXT        VCC (3.3V/5V)         |        [R] 4.7kΩ 上拉电阻         |MCU -----+-------- DS18B20 (DQ)         |        GND
+
+
+1.2 开漏输出原理（重要！）单总线使用 开漏输出（Open-Drain） 模式：
+
+
+
+MCU 操作
+DQ 引脚状态
+实际电平
+
+
+
+DQ = 0
+强制拉低
+低电平（0V）
+
+
+DQ = 1
+释放总线（高阻态）
+高电平（由上拉电阻决定）
+
+
+关键理解：
+
+DQ = 1 不是主动输出高电平，而是”松手”让上拉 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/')"><div class="post_cover left"><a href="/2025/11/24/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/" title="I2C 协议（PCF8591）" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/4.PCF8951.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="I2C 协议（PCF8591）" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/" title="I2C 协议（PCF8591）">未读</a></div><a class="article-title" href="/2025/11/24/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/" title="I2C 协议（PCF8591）">I2C 协议（PCF8591）</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:34:21.589Z" title="更新于 2025-11-24 22:34:21" time="2025-11-24 22:34:21">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">I2C 协议（PCF8591）本文档记录了 I2C 通信协议的基础知识以及 PCF8591 芯片（8位AD&#x2F;DA转换器）的应用细节。
+🏗️ 整体架构三层关系图1234567891011121314TEXT┌─────────────────────────────────────────┐│  应用层：PCF8591芯片                     ││  ├─ 硬件功能：4路AD + 1路DA              ││  ├─ 设备地址：0x90/0x91                 ││  └─ 控制逻辑：寄存器/控制字节            │├─────────────────────────────────────────┤│  通信层：I2C协议                         ││  ├─ 7个基础函数（通用所有I2C设备）       ││  └─ 时序：Start/Stop/应答/数据传输       │├─────────────────────────────────────────┤│  硬件层：51单片机GP ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/')"><div class="post_cover left"><a href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/2.数码管显示原理与动态扫描实现..png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数码管和定时器" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">技术笔记</div><a class="unvisited-post" href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器">未读</a></div><a class="article-title" href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器">数码管和定时器</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:31:42.070Z" title="更新于 2025-11-24 22:31:42" time="2025-11-24 22:31:42">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">**数码管和定时器 **一、数码管基本原理1. 数码管结构数码管本质上是由8个LED段（ag + 小数点dp）组合而成的显示器件，用于显示数字09及部分字母。
 根据内部连接方式，可分为两种类型：
 
 
@@ -390,44 +473,7 @@ $$\begin{aligned}d , (\text{cm}) &amp;&#x3D; \frac{340 , \text{m&#x2F;s} \times 
 位选（选中哪个数码管）与段选（显示什么数字）未严格同步；
 段码数据写入后，未先关闭所有位选就切换，造成短暂重叠。
 
-🔧 解决方法 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/')"><div class="post_cover left"><a href="/2025/11/24/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/" title="I2C 协议（PCF8591）" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/4.PCF8951.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="I2C 协议（PCF8591）" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/" title="I2C 协议（PCF8591）">未读</a></div><a class="article-title" href="/2025/11/24/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/" title="I2C 协议（PCF8591）">I2C 协议（PCF8591）</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:34:21.589Z" title="更新于 2025-11-24 22:34:21" time="2025-11-24 22:34:21">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">I2C 协议（PCF8591）本文档记录了 I2C 通信协议的基础知识以及 PCF8591 芯片（8位AD&#x2F;DA转换器）的应用细节。
-🏗️ 整体架构三层关系图1234567891011121314TEXT┌─────────────────────────────────────────┐│  应用层：PCF8591芯片                     ││  ├─ 硬件功能：4路AD + 1路DA              ││  ├─ 设备地址：0x90/0x91                 ││  └─ 控制逻辑：寄存器/控制字节            │├─────────────────────────────────────────┤│  通信层：I2C协议                         ││  ├─ 7个基础函数（通用所有I2C设备）       ││  └─ 时序：Start/Stop/应答/数据传输       │├─────────────────────────────────────────┤│  硬件层：51单片机GP ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/')"><div class="post_cover left"><a href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单总线协议详解（DS18B20 ）" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）">未读</a></div><a class="article-title" href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）">单总线协议详解（DS18B20 ）</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:33:23.443Z" title="更新于 2025-11-24 22:33:23" time="2025-11-24 22:33:23">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">​		
-单总线协议详解（DS18B20 ）
-一、单总线协议基础1.1 什么是单总线？单总线（1-Wire） 是 Dallas&#x2F;Maxim 公司开发的一种串行通信协议。
-核心特点：
-
-✅ 只需 1 根数据线 Data Queue （DQ）+ 1 根地线（GND）
-✅ 支持多设备挂载（每个设备有唯一 64 位 ROM 码）
-✅ 半双工通信（同一时刻只能单向传输）
-✅ 主从架构（MCU 是主机，传感器是从机）
-
-硬件连接：
-1234567TEXT        VCC (3.3V/5V)         |        [R] 4.7kΩ 上拉电阻         |MCU -----+-------- DS18B20 (DQ)         |        GND
-
-
-1.2 开漏输出原理（重要！）单总线使用 开漏输出（Open-Drain） 模式：
-
-
-
-MCU 操作
-DQ 引脚状态
-实际电平
-
-
-
-DQ = 0
-强制拉低
-低电平（0V）
-
-
-DQ = 1
-释放总线（高阻态）
-高电平（由上拉电阻决定）
-
-
-关键理解：
-
-DQ = 1 不是主动输出高电平，而是”松手”让上拉 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/6.DS1302/')"><div class="post_cover left"><a href="/2025/11/24/6.DS1302/" title="DS1302实时时钟" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/6.蓝桥杯DS1302实时时钟封面.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DS1302实时时钟" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">硬核成长</div><a class="unvisited-post" href="/2025/11/24/6.DS1302/" title="DS1302实时时钟">未读</a></div><a class="article-title" href="/2025/11/24/6.DS1302/" title="DS1302实时时钟">DS1302实时时钟</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-25T12:20:45.211Z" title="更新于 2025-11-25 20:20:45" time="2025-11-25 20:20:45">2025-11-25</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a><a class="article-meta__tags" href="/tags/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>大学竞赛</span></a><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>学习笔记</span></a></span></div><div class="content">🕰️ DS1302 实时钟芯片学习笔记一、DS1302 通讯协议DS1302 采用 Dallas&#x2F;Maxim 三线同步串行接口（专有协议）。
+🔧 解决方法 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/6.DS1302/')"><div class="post_cover left"><a href="/2025/11/24/6.DS1302/" title="DS1302实时时钟" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/6.蓝桥杯DS1302实时时钟封面.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DS1302实时时钟" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">硬核成长</div><a class="unvisited-post" href="/2025/11/24/6.DS1302/" title="DS1302实时时钟">未读</a></div><a class="article-title" href="/2025/11/24/6.DS1302/" title="DS1302实时时钟">DS1302实时时钟</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-25T12:20:45.211Z" title="更新于 2025-11-25 20:20:45" time="2025-11-25 20:20:45">2025-11-25</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a><a class="article-meta__tags" href="/tags/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>大学竞赛</span></a><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>学习笔记</span></a></span></div><div class="content">🕰️ DS1302 实时钟芯片学习笔记一、DS1302 通讯协议DS1302 采用 Dallas&#x2F;Maxim 三线同步串行接口（专有协议）。
 1. 信号线芯片仅需 3 根信号线进行通信：
 
 SCLK：串行时钟（主机输出）
