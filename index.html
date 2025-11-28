@@ -60,7 +60,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-11-28 16:43:18',
+  postUpdate: '2025-11-28 16:53:37',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -240,55 +240,44 @@ A、B、C 接 P2.0、P2.1、P2.2（或类似端口）
 
 4. 代码实现概述 (基于 STC89C 系列单片机)这里需要注意的是要正确使用系统频率为 12MHz，并且使用 y1/stc89 指令集。
 4.1 延时函数 Delay12us(void)
-1234567891011121314#include &amp;quot;ul.h&amp;quot;#include &amp;lt;intrins.h&amp;gt; // 标准头文件/** * ...</div><a class="blog-slider__button" href="2025/11/24/10.超声波测距原理与实现/" alt="超声波测距">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2025/11/27/11.内存管理/" title="内存管理"><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/11.内存管理.png" alt="图片" onerror="this.src=undefined; this.onerror = null;"></a><div class="blog-slider__content"><span class="blog-slider__code">2025-11-27</span><a class="blog-slider__title" href="2025/11/27/11.内存管理/" alt="内存管理">内存管理</a><div class="blog-slider__text">📝 内存管理一、什么是 RAM？（随机存取存储器）
-RAM (Random Access Memory)：掉电丢失的数据存储区。
-8051 系列的 片内 RAM 只有 128 字节 或 256 字节（极度珍贵！）。
-所有变量、栈、缓冲区都必须放在这 256 字节以内，因此 必须手动管理内存！
-
-二、Keil C51 各种存储类型对比（超级重点）
-
-
-关键字
-存放位置
-地址范围
-访问方式
-访问速度
-空间大小
-典型用途
+1234567891011121314#include &amp;quot;ul.h&amp;quot;#include &amp;lt;intrins.h&amp;gt; // 标准头文件/** * ...</div><a class="blog-slider__button" href="2025/11/24/10.超声波测距原理与实现/" alt="超声波测距">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2025/11/24/2.数码管显示原理与动态扫描实现/" title="数码管和定时器"><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/2.数码管显示原理与动态扫描实现..png" alt="图片" onerror="this.src=undefined; this.onerror = null;"></a><div class="blog-slider__content"><span class="blog-slider__code">2025-11-24</span><a class="blog-slider__title" href="2025/11/24/2.数码管显示原理与动态扫描实现/" alt="数码管和定时器">数码管和定时器</a><div class="blog-slider__text">**数码管和定时器 **一、数码管基本原理1. 数码管结构数码管本质上是由8个LED段（ag + 小数点dp）组合而成的显示器件，用于显示数字09及部分字母。
+根据内部连接方式，可分为两种类型：
 
 
 
-data
-片内 RAM 低 128 字节
-00H ~ 7FH
-直接寻址 &amp;#x2F; 间接寻址
-★★★★★
-~100 字节可用
-频繁访问的小变量、函数参数、栈
 
 
-idata
-片内 RAM 高 128 字节
-80H ~ FFH
-只能间接寻址 (@R0&amp;#x2F;@R1)
-★★★★
-128 字节
-数组、缓冲区、不太频繁访问的变量
+类型
+阳极连接
+阴极连接
+控制方式
+亮灭逻辑
 
 
-xdata
-片外扩展 RAM（如 6264）
-0000H ~ FFFFH
-MOVX 指令
-★★
-最大 64KB
-大数组、LCD 缓冲区、FAT 文件系统等
+
+共阳极数码管
+所有LED阳极连在一起接VCC
+每段独立接驱动电路
+控制阴极电平
+0亮，1灭
 
 
-pdata
-片外 RAM 低 256 字节
-0000H ~ 00FFH
-MOV ...</div><a class="blog-slider__button" href="2025/11/27/11.内存管理/" alt="内存管理">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div><div id="topPostGroup"><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/22/0.Keil工程模板搭建指南/" title="单片机Keil工程模板搭建指南 (V4T)"><span class="top-group-text">荐</span><img class="post_bg" alt="单片机Keil工程模板搭建指南 (V4T)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/0.Keil工程模板搭建指南.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/22/0.Keil工程模板搭建指南/" title="单片机Keil工程模板搭建指南 (V4T)">单片机Keil工程模板搭建指南 (V4T)</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/22/1.LED底层代码/" title="蓝桥杯LED模块"><span class="top-group-text">荐</span><img class="post_bg" alt="蓝桥杯LED模块" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/1.蓝桥杯LED模块.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/22/1.LED底层代码/" title="蓝桥杯LED模块">蓝桥杯LED模块</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/24/10.超声波测距原理与实现/" title="超声波测距"><span class="top-group-text">荐</span><img class="post_bg" alt="超声波测距" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/10.蓝桥杯超声波测距封面.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/24/10.超声波测距原理与实现/" title="超声波测距">超声波测距</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/27/11.内存管理/" title="内存管理"><span class="top-group-text">荐</span><img class="post_bg" alt="内存管理" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/11.内存管理.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/27/11.内存管理/" title="内存管理">内存管理</a></div></div><div class="top-group-list-none"></div><div class="top-group-list-none"></div><div class="top-group-list-none"></div></div></div></div></div><script src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"></script><script>function initBlogSlider() {
+共阴极数码管
+每段独立接驱动电路
+所有LED阴极连在一起接地
+控制阳极电平
+1亮，0灭
+
+
+
+✅ 本系统使用的是共阳极数码管（根据电路图与代码中0xc0, 0xf9...推断）因此：输出低电平 → 段点亮；输出高电平 → 段熄灭
+
+2. 段码表（共阳极数码管）3. 什么是“消影”？如何解决？❓ 什么是消影？在动态扫描显示中，当从一个数码管切换到另一个时，由于段码数据提前加载或位选信号延迟关闭，会导致前一个数码管在切换瞬间仍有残影（部分段微亮），这种现象称为**“消影”**（或“鬼影”）。
+✅ 消影产生的原因：
+位选（选中哪个数码管）与段选（显示什么数字）未严格同步；
+段码数据写入后，未先关闭所有位选就切换，造成短暂重叠。
+
+🔧 解决方法 ...</div><a class="blog-slider__button" href="2025/11/24/2.数码管显示原理与动态扫描实现/" alt="数码管和定时器">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div><div id="topPostGroup"><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/22/0.Keil工程模板搭建指南/" title="单片机Keil工程模板搭建指南 (V4T)"><span class="top-group-text">荐</span><img class="post_bg" alt="单片机Keil工程模板搭建指南 (V4T)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/0.Keil工程模板搭建指南.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/22/0.Keil工程模板搭建指南/" title="单片机Keil工程模板搭建指南 (V4T)">单片机Keil工程模板搭建指南 (V4T)</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/22/1.LED底层代码/" title="蓝桥杯LED模块"><span class="top-group-text">荐</span><img class="post_bg" alt="蓝桥杯LED模块" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/1.蓝桥杯LED模块.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/22/1.LED底层代码/" title="蓝桥杯LED模块">蓝桥杯LED模块</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/24/10.超声波测距原理与实现/" title="超声波测距"><span class="top-group-text">荐</span><img class="post_bg" alt="超声波测距" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/10.蓝桥杯超声波测距封面.png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/24/10.超声波测距原理与实现/" title="超声波测距">超声波测距</a></div></div><div class="top-group-list-item"><div class="post_cover left_radius"><a href="2025/11/24/2.数码管显示原理与动态扫描实现/" title="数码管和定时器"><span class="top-group-text">荐</span><img class="post_bg" alt="数码管和定时器" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/2.数码管显示原理与动态扫描实现..png" onerror="this.src=undefined; this.onerror = null;"></a></div><div class="top-group-info"><a class="article-title" href="2025/11/24/2.数码管显示原理与动态扫描实现/" title="数码管和定时器">数码管和定时器</a></div></div><div class="top-group-list-none"></div><div class="top-group-list-none"></div><div class="top-group-list-none"></div></div></div></div></div><script src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"></script><script>function initBlogSlider() {
   var swiper = new Swiper(".blog-slider", {
     passiveListeners: true,
     spaceBetween: 30,
@@ -327,15 +316,15 @@ setTimeout(()=>{
       </a>
     </div>
     
-    <div class="catalog-list-item" id="/categories/硬核成长/">
-      <a href="/categories/硬核成长/">
-        硬核成长
-      </a>
-    </div>
-    
     <div class="catalog-list-item" id="/categories/技术笔记/">
       <a href="/categories/技术笔记/">
         技术笔记
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/硬核成长/">
+      <a href="/categories/硬核成长/">
+        硬核成长
       </a>
     </div>
     </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/2025/11/27/11.%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/')"><div class="post_cover left"><a href="/2025/11/27/11.%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" title="内存管理" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/11.内存管理.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="内存管理" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><span class="newPost">最新</span><a class="unvisited-post" href="/2025/11/27/11.%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" title="内存管理">未读</a></div><a class="article-title" href="/2025/11/27/11.%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" title="内存管理">内存管理</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-27T02:00:00.000Z" title="发表于 2025-11-27 10:00:00" time="2025-11-27 10:00:00">2025-11-27</time><time class="time_hidden" datetime="2025-11-27T07:33:49.463Z" title="更新于 2025-11-27 15:33:49" time="2025-11-27 15:33:49">2025-11-27</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">📝 内存管理一、什么是 RAM？（随机存取存储器）
@@ -397,7 +386,44 @@ MOV ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2
 
 4. 代码实现概述 (基于 STC89C 系列单片机)这里需要注意的是要正确使用系统频率为 12MHz，并且使用 y1/stc89 指令集。
 4.1 延时函数 Delay12us(void)
-1234567891011121314#include &quot;ul.h&quot;#include &lt;intrins.h&gt; // 标准头文件/** * ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/')"><div class="post_cover left"><a href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单总线协议详解（DS18B20 ）" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）">未读</a></div><a class="article-title" href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）">单总线协议详解（DS18B20 ）</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:33:23.443Z" title="更新于 2025-11-24 22:33:23" time="2025-11-24 22:33:23">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">​		
+1234567891011121314#include &quot;ul.h&quot;#include &lt;intrins.h&gt; // 标准头文件/** * ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/')"><div class="post_cover left"><a href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/2.数码管显示原理与动态扫描实现..png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数码管和定时器" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">技术笔记</div><a class="unvisited-post" href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器">未读</a></div><a class="article-title" href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器">数码管和定时器</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:31:42.070Z" title="更新于 2025-11-24 22:31:42" time="2025-11-24 22:31:42">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">**数码管和定时器 **一、数码管基本原理1. 数码管结构数码管本质上是由8个LED段（ag + 小数点dp）组合而成的显示器件，用于显示数字09及部分字母。
+根据内部连接方式，可分为两种类型：
+
+
+
+
+
+类型
+阳极连接
+阴极连接
+控制方式
+亮灭逻辑
+
+
+
+共阳极数码管
+所有LED阳极连在一起接VCC
+每段独立接驱动电路
+控制阴极电平
+0亮，1灭
+
+
+共阴极数码管
+每段独立接驱动电路
+所有LED阴极连在一起接地
+控制阳极电平
+1亮，0灭
+
+
+
+✅ 本系统使用的是共阳极数码管（根据电路图与代码中0xc0, 0xf9...推断）因此：输出低电平 → 段点亮；输出高电平 → 段熄灭
+
+2. 段码表（共阳极数码管）3. 什么是“消影”？如何解决？❓ 什么是消影？在动态扫描显示中，当从一个数码管切换到另一个时，由于段码数据提前加载或位选信号延迟关闭，会导致前一个数码管在切换瞬间仍有残影（部分段微亮），这种现象称为**“消影”**（或“鬼影”）。
+✅ 消影产生的原因：
+位选（选中哪个数码管）与段选（显示什么数字）未严格同步；
+段码数据写入后，未先关闭所有位选就切换，造成短暂重叠。
+
+🔧 解决方法 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/')"><div class="post_cover left"><a href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单总线协议详解（DS18B20 ）" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）">未读</a></div><a class="article-title" href="/2025/11/24/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/" title="单总线协议详解（DS18B20 ）">单总线协议详解（DS18B20 ）</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:33:23.443Z" title="更新于 2025-11-24 22:33:23" time="2025-11-24 22:33:23">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">​		
 单总线协议详解（DS18B20 ）
 一、单总线协议基础1.1 什么是单总线？单总线（1-Wire） 是 Dallas&#x2F;Maxim 公司开发的一种串行通信协议。
 核心特点：
@@ -476,7 +502,14 @@ RST：片选&#x2F;复位（高电平有效，通信开始&#x2F;结束标志）
 在写入秒寄存器 (0x80) 的值时，必须确保其 CH 位 (bit7) 为 0，即需要对写入值进行 &amp; 0x7F 操作，否则时间将停止。
 
 
- ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/8.%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8/')"><div class="post_cover left"><a href="/2025/11/24/8.%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8/" title="任务调度器" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/8.嵌入式系统任务调度器封面.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="任务调度器" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/8.%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8/" title="任务调度器">未读</a></div><a class="article-title" href="/2025/11/24/8.%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8/" title="任务调度器">任务调度器</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T15:08:10.507Z" title="更新于 2025-11-24 23:08:10" time="2025-11-24 23:08:10">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">任务调度器123456typedef struct&#123;    void (*task_func)(void);          // 【1】要执行的函数（函数指针）    unsigned long int rate_ms;        // 【2】每隔多少毫秒执行一次（固定值）    unsigned long int last_ms;        // 【3】上次执行的时间（会自己变）&#125; task_t;
+ ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/7.NE555/')"><div class="post_cover left"><a href="/2025/11/24/7.NE555/" title="NE555频率测量系统设计" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/7.蓝桥杯NE555定时器封面.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NE555频率测量系统设计" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/7.NE555/" title="NE555频率测量系统设计">未读</a></div><a class="article-title" href="/2025/11/24/7.NE555/" title="NE555频率测量系统设计">NE555频率测量系统设计</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:37:50.741Z" title="更新于 2025-11-24 22:37:50" time="2025-11-24 22:37:50">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">NE555频率测量系统设计📋 系统概述基于NE555方波发生器和51单片机的频率测量系统，通过计数器模式精确测量外部脉冲频率。
+
+🔧 硬件设计NE555原理图
+定时器数据手册
+
+🏗️ 系统整体框图123456789101112131415161718+------------------+|  NE555方波发生器   |  ← 用来产生已知/可调频率的方波（相当于信号源）|  输出引脚3 (OUT)   |+--------+---------+         ↓ (一根信号线)   单片机 P3.4 (T0引脚)         ↓+--------v---------+|    51单片机内部    ||                   ||  T0：计数器模式    | ← 专门负责数外部脉冲个数（16位）|  T1：定时器模式    | ← 产生精确的1秒“闸门时间”|                   ||  每1秒读取一次T0   ||  计数值 → 频率值   ||  → 送数码管显示    |+-------------------+
+
+💻 程序设计1 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/8.%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8/')"><div class="post_cover left"><a href="/2025/11/24/8.%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8/" title="任务调度器" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/8.嵌入式系统任务调度器封面.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="任务调度器" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/8.%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8/" title="任务调度器">未读</a></div><a class="article-title" href="/2025/11/24/8.%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8/" title="任务调度器">任务调度器</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T15:08:10.507Z" title="更新于 2025-11-24 23:08:10" time="2025-11-24 23:08:10">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">任务调度器123456typedef struct&#123;    void (*task_func)(void);          // 【1】要执行的函数（函数指针）    unsigned long int rate_ms;        // 【2】每隔多少毫秒执行一次（固定值）    unsigned long int last_ms;        // 【3】上次执行的时间（会自己变）&#125; task_t;
 
 1. 定义结构体（只是画一张“任务卡的模板）1234567// 简单任务调度器结构体定义typedef struct&#123;    void (*task_func)(void);          // 任务函数指针    unsigned long int rate_ms;        // 执行周期（毫秒）    unsigned long int last_ms;        // 上次执行的时间戳&#125; task_t;
 
@@ -532,51 +565,7 @@ I²C (已学)
 
 🔍 串口的核心概念
 异步 (Asynchronous): 收发双方必须约定波特率，通过数据帧中的起始位实现同步。
-波特率 (Baud Rate): 每秒传输的位数 (bps)，收发双方必 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/')"><div class="post_cover left"><a href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/2.数码管显示原理与动态扫描实现..png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数码管和定时器" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">技术笔记</div><a class="unvisited-post" href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器">未读</a></div><a class="article-title" href="/2025/11/24/2.%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%A8%E6%80%81%E6%89%AB%E6%8F%8F%E5%AE%9E%E7%8E%B0/" title="数码管和定时器">数码管和定时器</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:31:42.070Z" title="更新于 2025-11-24 22:31:42" time="2025-11-24 22:31:42">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">**数码管和定时器 **一、数码管基本原理1. 数码管结构数码管本质上是由8个LED段（ag + 小数点dp）组合而成的显示器件，用于显示数字09及部分字母。
-根据内部连接方式，可分为两种类型：
-
-
-
-
-
-类型
-阳极连接
-阴极连接
-控制方式
-亮灭逻辑
-
-
-
-共阳极数码管
-所有LED阳极连在一起接VCC
-每段独立接驱动电路
-控制阴极电平
-0亮，1灭
-
-
-共阴极数码管
-每段独立接驱动电路
-所有LED阴极连在一起接地
-控制阳极电平
-1亮，0灭
-
-
-
-✅ 本系统使用的是共阳极数码管（根据电路图与代码中0xc0, 0xf9...推断）因此：输出低电平 → 段点亮；输出高电平 → 段熄灭
-
-2. 段码表（共阳极数码管）3. 什么是“消影”？如何解决？❓ 什么是消影？在动态扫描显示中，当从一个数码管切换到另一个时，由于段码数据提前加载或位选信号延迟关闭，会导致前一个数码管在切换瞬间仍有残影（部分段微亮），这种现象称为**“消影”**（或“鬼影”）。
-✅ 消影产生的原因：
-位选（选中哪个数码管）与段选（显示什么数字）未严格同步；
-段码数据写入后，未先关闭所有位选就切换，造成短暂重叠。
-
-🔧 解决方法 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/24/7.NE555/')"><div class="post_cover left"><a href="/2025/11/24/7.NE555/" title="NE555频率测量系统设计" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/7.蓝桥杯NE555定时器封面.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NE555频率测量系统设计" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">学习笔记</div><a class="unvisited-post" href="/2025/11/24/7.NE555/" title="NE555频率测量系统设计">未读</a></div><a class="article-title" href="/2025/11/24/7.NE555/" title="NE555频率测量系统设计">NE555频率测量系统设计</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00" time="2025-11-24 10:00:00">2025-11-24</time><time class="time_hidden" datetime="2025-11-24T14:37:50.741Z" title="更新于 2025-11-24 22:37:50" time="2025-11-24 22:37:50">2025-11-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div><div class="content">NE555频率测量系统设计📋 系统概述基于NE555方波发生器和51单片机的频率测量系统，通过计数器模式精确测量外部脉冲频率。
-
-🔧 硬件设计NE555原理图
-定时器数据手册
-
-🏗️ 系统整体框图123456789101112131415161718+------------------+|  NE555方波发生器   |  ← 用来产生已知/可调频率的方波（相当于信号源）|  输出引脚3 (OUT)   |+--------+---------+         ↓ (一根信号线)   单片机 P3.4 (T0引脚)         ↓+--------v---------+|    51单片机内部    ||                   ||  T0：计数器模式    | ← 专门负责数外部脉冲个数（16位）|  T1：定时器模式    | ← 产生精确的1秒“闸门时间”|                   ||  每1秒读取一次T0   ||  计数值 → 频率值   ||  → 送数码管显示    |+-------------------+
-
-💻 程序设计1 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/22/hello-world/')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/2025/11/22/hello-world/" title="Hello World">未读</a></div><a class="article-title" href="/2025/11/22/hello-world/" title="Hello World">Hello World</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-22T03:09:52.303Z" title="发表于 2025-11-22 11:09:52" time="2025-11-22 11:09:52">2025-11-22</time><time class="time_hidden" datetime="2025-11-22T03:09:52.303Z" title="更新于 2025-11-22 11:09:52" time="2025-11-22 11:09:52">2025-11-22</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+波特率 (Baud Rate): 每秒传输的位数 (bps)，收发双方必 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2025/11/22/hello-world/')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/2025/11/22/hello-world/" title="Hello World">未读</a></div><a class="article-title" href="/2025/11/22/hello-world/" title="Hello World">Hello World</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-22T03:09:52.303Z" title="发表于 2025-11-22 11:09:52" time="2025-11-22 11:09:52">2025-11-22</time><time class="time_hidden" datetime="2025-11-22T03:09:52.303Z" title="更新于 2025-11-22 11:09:52" time="2025-11-22 11:09:52">2025-11-22</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
 
 More info: Writing
