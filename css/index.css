@@ -7417,9 +7417,6 @@ body[data-type="link"] #page .page-title {
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta-link {
   margin: 0 4px;
 }
-#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap time {
-  display: none;
-}
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap a {
   color: var(--anzhiyu-fontcolor);
   font-size: 14px;
@@ -11431,9 +11428,6 @@ h1.page-title + .tag-cloud-list {
 #post-info #post-meta a:hover {
   color: #8fbcd4;
   text-decoration: underline;
-}
-#post-info #post-meta time {
-  display: none;
 }
 #nav {
   position: fixed;
