@@ -5,7 +5,7 @@
   diytitle: {"enable":true,"leaveTitle":"你要开心！你要幸福！","backTitle":"欢迎回来-RossLin的数字花园"},
   LA51: undefined,
   greetingBox: undefined,
-  twikooEnvId: 'https:rosslin.de5.net/',
+  twikooEnvId: 'https:twikoo-psi-smoky.vercel.app/',
   commentBarrageConfig:undefined,
   music_page_default: "nav_music",
   root: '/',
@@ -283,7 +283,7 @@ queueMicrotask(() => {
   const init = () => {
     twikoo.init(Object.assign({
       el: '#twikoo-wrap',
-      envId: 'https:rosslin.de5.net/',
+      envId: 'https:twikoo-psi-smoky.vercel.app/',
       region: '',
       onCommentLoaded: () => {
         anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
@@ -300,7 +300,7 @@ queueMicrotask(() => {
     const countELement = document.getElementById('twikoo-count')
     if(!countELement) return
     twikoo.getCommentsCount({
-      envId: 'https:rosslin.de5.net/',
+      envId: 'https:twikoo-psi-smoky.vercel.app/',
       region: '',
       urls: [window.location.pathname],
       includeReply: false
@@ -342,7 +342,7 @@ queueMicrotask(() => {
   const getComment = () => {
     const runTwikoo = () => {
       twikoo.getRecentComments({
-        envId: 'https:rosslin.de5.net/',
+        envId: 'https:twikoo-psi-smoky.vercel.app/',
         region: '',
         pageSize: 6,
         includeReply: true
