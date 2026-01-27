@@ -1,0 +1,673 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>3.单总线协议详解（DS18B20 ） | RossLin的数字花园</title><meta name="keywords" content="大学竞赛,学习笔记,蓝桥杯"><meta name="author" content="RossLin"><meta name="copyright" content="RossLin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="3.单总线协议详解（DS18B20 ）"><meta name="application-name" content="3.单总线协议详解（DS18B20 ）"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="3.单总线协议详解（DS18B20 ）"><meta property="og:url" content="https://rosslin.xyz/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/index.html"><meta property="og:site_name" content="RossLin的数字花园"><meta property="og:description" content="​		 单总线协议详解（DS18B20 ） 一、单总线协议基础1.1 什么是单总线？单总线（1-Wire） 是 Dallas&amp;#x2F;Maxim 公司开发的一种串行通信协议。 核心特点：  ✅ 只需 1 根数据线 Data Queue （DQ）+ 1 根地线（GND） ✅ 支持多设备挂载（每个设备"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png"><meta property="article:author" content="RossLin"><meta property="article:tag" content="数字花园，读书笔记, 生活记录,个人博客,"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png"><meta name="description" content="​		 单总线协议详解（DS18B20 ） 一、单总线协议基础1.1 什么是单总线？单总线（1-Wire） 是 Dallas&amp;#x2F;Maxim 公司开发的一种串行通信协议。 核心特点：  ✅ 只需 1 根数据线 Data Queue （DQ）+ 1 根地线（GND） ✅ 支持多设备挂载（每个设备"><link rel="shortcut icon" href="/images/RossLin.png"><link rel="canonical" href="https://rosslin.xyz/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"你要开心！你要幸福！","backTitle":"欢迎回来-RossLin的数字花园"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: 'https://twikoo.rosslin.xyz/',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: undefined,
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: RossLin","link":"链接: ","source":"来源: RossLin的数字花园","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'RossLin的数字花园',
+  title: '3.单总线协议详解（DS18B20 ）',
+  postAI: '',
+  pageFillDescription: '单总线协议详解（DS18B20 ）, 一、单总线协议基础, 1.1 什么是单总线？, 1.2 开漏输出原理（重要！）, 二、单总线时序（通用规则）, 2.1 初始化时序（复位 + 应答）, 2.2 写时序（主机发送数据）, 写 0, 写 1, 2.3 读时序（从机发送数据）, 三、单总线通信流程, 3.1 标准流程（固定顺序）, 3.2 ROM 操作指令（所有单总线设备通用）, 四、DS18B20 专属内容, 4.1 功能指令（DS18B20 特定）, 4.2 暂存器结构（9 字节）, 4.3 温度数据格式, 4.4 完整读取温度代码单总线协议详解一单总线协议基础什么是单总线单总线是公司开发的一种串行通信协议核心特点只需根数据线根地线支持多设备挂载每个设备有唯一位码半双工通信同一时刻只能单向传输主从架构是主机传感器是从机硬件连接上拉电阻开漏输出原理重要单总线使用开漏输出模式操作引脚状态实际电平强制拉低低电平释放总线高阻态高电平由上拉电阻决定关键理解不是主动输出高电平而是松手让上拉电阻把总线拉高从机可以在总线被释放后拉低总线实现数据传输二单总线时序通用规则初始化时序复位应答目的确认设备在线流程主机动作拉低总线发送复位脉冲释放总线等待读取总线电平从机响应检测到复位脉冲后拉低总线应答脉冲返回在线返回无响应波形图应答脉冲代码示例拉高总线准备产生复位脉冲拉低释放总线等待响应检测应答脉冲低电平表示存在返回表示存在表示不存在写时序主机发送数据原则通过拉低时间长短区分和写拉低释放总线写拉低短脉冲立即释放总线保持高电平至时间槽结束代码示例开始写时序拉低总线写入数据位或保持释放总线准备下一位数据读时序从机发送数据原则主机触发从机控制总线电平流程主机拉低总线触发信号主机释放总线等待后采样总线电平低电平高电平波形图读到从机拉低读到从机不拉低保持高电平代码示例初始化为开始读时序拉低总线右移一位准备接收新数据释放总线让控制在内读取总线电平如果为高电平则最高位置等待读周期结束三单总线通信流程标准流程固定顺序初始化握手确认设备在线操作选择跳过设备功能指令发送设备特定命令数据传输读取或写入数据每次通信必须从初始化开始操作指令所有单总线设备通用指令码名称功能应用场景跳过匹配单设备系统最常用选择特定设备多设备总线读取位码获取设备搜索所有设备设备枚举四专属内容功能指令特定指令码名称功能启动温度转换耗时读取暂存器含温度数据写入配置精度报警阈值暂存器结构字节调用后按顺序发送字节索引内容说明温度低位第次温度高位第次寄存器高温报警阈值寄存器低温报警阈值配置寄存器精度设置位保留固定校验数据完整性校验温度数据格式位补码表示高字节低字节符号位整数部分小数部分分辨率范围计算公式温度示例补码完整读取温度代码用于存储温度的低位和高位字节初始化跳过操作适用于单总线只有一个设备的情况发送启动温度转换命令再次初始化准备读取跳过操作发送读取暂存器命令读取温度值的低位字节读取温度值的高位字节内嵌函数固有函数是一种特殊的函数空操作它会插入一个精确的机器周期延时用于产生非常短的延时循环右移循环左移带进位循环右移带进位循环左移单总线通信协议抽象规则一种通信标准协议定义了时序规则定义了通信流程遵循实现具体芯片实现者一款温度传感器芯片使用单总线协议通信有自己特定的指令集',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-11-28 18:17:19',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="RossLin的数字花园" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">RossLin的数字花园</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/images/wechat_reward.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="/images/wechat_reward.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/images/alipay_pay.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="/images/alipay_pay.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/" style="font-size: 1.05rem;">大学竞赛<sup>18</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">学习笔记<sup>18</sup></a><a href="/tags/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/" style="font-size: 1.05rem;">智能门锁<sup>6</sup></a><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 1.05rem;">蓝桥杯<sup>12</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/12/"><span class="card-archive-list-date">十二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">十一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">12</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/" itemprop="url">嵌入式之旅</a><i class="anzhiyufont anzhiyu-icon-angle-right post-meta-separator"></i><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/" itemprop="url">大学竞赛</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>大学竞赛</span></a><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>学习笔记</span></a><a class="article-meta__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>蓝桥杯</span></a></span></div></div><h1 class="post-title" itemprop="name headline">3.单总线协议详解（DS18B20 ）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00">2025-11-24</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-11-28T10:17:19.343Z" title="更新于 2025-11-28 18:17:19">2025-11-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">1.5k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为东莞"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>东莞</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://rosslin.xyz/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/"><header><a class="post-meta-categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/" itemprop="url">嵌入式之旅</a><a class="post-meta-categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/" itemprop="url">大学竞赛</a><a href="/tags/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/" tabindex="-1" itemprop="url">大学竞赛</a><a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url">学习笔记</a><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" tabindex="-1" itemprop="url">蓝桥杯</a><h1 id="CrawlerTitle" itemprop="name headline">3.单总线协议详解（DS18B20 ）</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">RossLin</span><time itemprop="dateCreated datePublished" datetime="2025-11-24T02:00:00.000Z" title="发表于 2025-11-24 10:00:00">2025-11-24</time><time itemprop="dateCreated datePublished" datetime="2025-11-28T10:17:19.343Z" title="更新于 2025-11-28 18:17:19">2025-11-28</time></header><p>​		</p>
+<h1 id="单总线协议详解（DS18B20-）"><a href="#单总线协议详解（DS18B20-）" class="headerlink" title="单总线协议详解（DS18B20 ）"></a>单总线协议详解（DS18B20 ）</h1><hr>
+<h2 id="一、单总线协议基础"><a href="#一、单总线协议基础" class="headerlink" title="一、单总线协议基础"></a>一、单总线协议基础</h2><h3 id="1-1-什么是单总线？"><a href="#1-1-什么是单总线？" class="headerlink" title="1.1 什么是单总线？"></a>1.1 什么是单总线？</h3><p><strong>单总线（1-Wire）</strong> 是 Dallas&#x2F;Maxim 公司开发的一种串行通信协议。</p>
+<p><strong>核心特点：</strong></p>
+<ul>
+<li>✅ 只需 1 根数据线 <strong>Data Queue</strong> （DQ）+ 1 根地线（GND）</li>
+<li>✅ 支持多设备挂载（每个设备有唯一 64 位 ROM 码）</li>
+<li>✅ 半双工通信（同一时刻只能单向传输）</li>
+<li>✅ 主从架构（MCU 是主机，传感器是从机）</li>
+</ul>
+<p><strong>硬件连接：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TEXT        VCC (3.3V/5V)</span><br><span class="line">         |</span><br><span class="line">        [R] 4.7kΩ 上拉电阻</span><br><span class="line">         |</span><br><span class="line">MCU -----+-------- DS18B20 (DQ)</span><br><span class="line">         |</span><br><span class="line">        GND</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="1-2-开漏输出原理（重要！）"><a href="#1-2-开漏输出原理（重要！）" class="headerlink" title="1.2 开漏输出原理（重要！）"></a>1.2 开漏输出原理（重要！）</h3><p>单总线使用 <strong>开漏输出（Open-Drain）</strong> 模式：</p>
+<table>
+<thead>
+<tr>
+<th align="left">MCU 操作</th>
+<th align="left">DQ 引脚状态</th>
+<th align="left">实际电平</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>DQ = 0</code></td>
+<td align="left">强制拉低</td>
+<td align="left">低电平（0V）</td>
+</tr>
+<tr>
+<td align="left"><code>DQ = 1</code></td>
+<td align="left"><strong>释放总线</strong>（高阻态）</td>
+<td align="left">高电平（由上拉电阻决定）</td>
+</tr>
+</tbody></table>
+<p><strong>关键理解：</strong></p>
+<ul>
+<li><code>DQ = 1</code> <strong>不是</strong>主动输出高电平，而是”松手”让上拉电阻把总线拉高</li>
+<li>从机可以在总线被释放后拉低总线（实现数据传输）</li>
+</ul>
+<hr>
+<h2 id="二、单总线时序（通用规则）"><a href="#二、单总线时序（通用规则）" class="headerlink" title="二、单总线时序（通用规则）"></a>二、单总线时序（通用规则）</h2><h3 id="2-1-初始化时序（复位-应答）"><a href="#2-1-初始化时序（复位-应答）" class="headerlink" title="2.1 初始化时序（复位 + 应答）"></a>2.1 初始化时序（复位 + 应答）</h3><p><strong>目的：</strong> 确认设备在线</p>
+<p><strong>流程：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">TEXT主机动作：</span><br><span class="line">1. 拉低总线 ≥480μs（发送复位脉冲）</span><br><span class="line">2. 释放总线</span><br><span class="line">3. 等待 15~60μs</span><br><span class="line">4. 读取总线电平</span><br><span class="line"></span><br><span class="line">从机响应：</span><br><span class="line">- 检测到复位脉冲后，拉低总线 60~240μs（应答脉冲）</span><br><span class="line">- 返回 0 = 在线，返回 1 = 无响应</span><br></pre></td></tr></table></figure>
+
+<p><strong>波形图：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TEXTMCU:  ────┐     ┌─────────────</span><br><span class="line">          │ 480μs│</span><br><span class="line">          └─────┘</span><br><span class="line"></span><br><span class="line">DS:   ─────────┐   ┌─────────</span><br><span class="line">               │60~│240μs</span><br><span class="line">               └───┘ 应答脉冲</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">bit init_ds18b20(void)</span><br><span class="line">   &#123;</span><br><span class="line">       bit initflag = 0;</span><br><span class="line">       </span><br><span class="line">       DQ = 1;         // 拉高总线，准备</span><br><span class="line">       Delay_OneWire(12);</span><br><span class="line">       DQ = 0;         // 产生复位脉冲 (拉低 &gt; 480us)</span><br><span class="line">       Delay_OneWire(80);</span><br><span class="line">       DQ = 1;         // 释放总线，等待DS18B20响应</span><br><span class="line">       Delay_OneWire(10); </span><br><span class="line">       initflag = DQ;  // 检测应答脉冲 (低电平表示存在)</span><br><span class="line">       Delay_OneWire(5);</span><br><span class="line">       </span><br><span class="line">       return initflag; // 返回0表示存在，1表示不存在</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-2-写时序（主机发送数据）"><a href="#2-2-写时序（主机发送数据）" class="headerlink" title="2.2 写时序（主机发送数据）"></a>2.2 写时序（主机发送数据）</h3><p><strong>原则：</strong> 通过 <strong>拉低时间长短</strong> 区分 0 和 1</p>
+<h4 id="写-0"><a href="#写-0" class="headerlink" title="写 0"></a>写 0</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TEXT1. 拉低 60~120μs</span><br><span class="line">2. 释放总线</span><br><span class="line">TEXTDQ: ────┐           ┌───</span><br><span class="line">        │  60~120μs │</span><br><span class="line">        └───────────┘</span><br></pre></td></tr></table></figure>
+
+<h4 id="写-1"><a href="#写-1" class="headerlink" title="写 1"></a>写 1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TEXT1. 拉低 1~15μs（短脉冲）</span><br><span class="line">2. 立即释放总线</span><br><span class="line">3. 保持高电平至时间槽结束</span><br><span class="line">TEXTDQ: ────┐┌──────────</span><br><span class="line">        ││ &lt;15μs</span><br><span class="line">        └┘</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void Write_DS18B20(unsigned char dat)</span><br><span class="line">    &#123;</span><br><span class="line">        unsigned char i;</span><br><span class="line">        for(i=0; i&lt;8; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            DQ = 0;             // 开始写时序，拉低总线</span><br><span class="line">            DQ = dat &amp; 0x01;    // 写入数据位 (0或1)</span><br><span class="line">            Delay_OneWire(5);   // 保持 &gt; 60us</span><br><span class="line">            DQ = 1;             // 释放总线</span><br><span class="line">            dat &gt;&gt;= 1;          // 准备下一位数据</span><br><span class="line">        &#125;</span><br><span class="line">        Delay_OneWire(5);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-3-读时序（从机发送数据）"><a href="#2-3-读时序（从机发送数据）" class="headerlink" title="2.3 读时序（从机发送数据）"></a>2.3 读时序（从机发送数据）</h3><p><strong>原则：</strong> 主机触发，从机控制总线电平</p>
+<p><strong>流程：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TEXT1. 主机拉低总线 1μs（触发信号）</span><br><span class="line">2. 主机释放总线</span><br><span class="line">3. 等待 10~15μs 后采样总线电平</span><br><span class="line">   - 低电平 = 0</span><br><span class="line">   - 高电平 = 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>波形图：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">TEXT读到 0:</span><br><span class="line">MCU:  ───┐┌────────</span><br><span class="line">         ││ 1μs</span><br><span class="line">         └┘</span><br><span class="line">DS:   ────┐        ┌───</span><br><span class="line">          │ 从机拉低 │</span><br><span class="line">          └────────┘</span><br><span class="line"></span><br><span class="line">读到 1:</span><br><span class="line">MCU:  ───┐┌────────</span><br><span class="line">         └┘</span><br><span class="line">DS:   ──────────────  (从机不拉低，保持高电平)</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">unsigned char Read_DS18B20(void)</span><br><span class="line">   &#123;</span><br><span class="line">       unsigned char i;</span><br><span class="line">       unsigned char dat = 0; // 初始化为0</span><br><span class="line">       </span><br><span class="line">       for(i=0; i&lt;8; i++)</span><br><span class="line">       &#123;</span><br><span class="line">           DQ = 0;             // 开始读时序，拉低总线</span><br><span class="line">           dat &gt;&gt;= 1;          // 右移一位，准备接收新数据</span><br><span class="line">           DQ = 1;             // 释放总线，让DS18B20控制</span><br><span class="line">           if(DQ)              // 在15us内读取总线电平</span><br><span class="line">           &#123;</span><br><span class="line">               dat |= 0x80;    // 如果为高电平，则最高位置1</span><br><span class="line">           &#125;	    </span><br><span class="line">           Delay_OneWire(5);   // 等待读周期结束</span><br><span class="line">       &#125;</span><br><span class="line">       return dat;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、单总线通信流程"><a href="#三、单总线通信流程" class="headerlink" title="三、单总线通信流程"></a>三、单总线通信流程</h2><h3 id="3-1-标准流程（固定顺序）"><a href="#3-1-标准流程（固定顺序）" class="headerlink" title="3.1 标准流程（固定顺序）"></a>3.1 标准流程（固定顺序）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TEXT1. 初始化        ← 握手确认设备在线</span><br><span class="line">   ↓</span><br><span class="line">2. ROM 操作      ← 选择/跳过设备</span><br><span class="line">   ↓</span><br><span class="line">3. 功能指令      ← 发送设备特定命令</span><br><span class="line">   ↓</span><br><span class="line">4. 数据传输      ← 读取或写入数据</span><br></pre></td></tr></table></figure>
+
+<p><strong>每次通信必须从初始化开始！</strong></p>
+<hr>
+<h3 id="3-2-ROM-操作指令（所有单总线设备通用）"><a href="#3-2-ROM-操作指令（所有单总线设备通用）" class="headerlink" title="3.2 ROM 操作指令（所有单总线设备通用）"></a>3.2 ROM 操作指令（所有单总线设备通用）</h3><table>
+<thead>
+<tr>
+<th align="center">指令码</th>
+<th align="left">名称</th>
+<th align="left">功能</th>
+<th align="left">应用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>0xCC</code></td>
+<td align="left">Skip ROM</td>
+<td align="left">跳过 ROM 匹配</td>
+<td align="left"><strong>单设备</strong>系统（最常用）</td>
+</tr>
+<tr>
+<td align="center"><code>0x55</code></td>
+<td align="left">Match ROM</td>
+<td align="left">选择特定设备</td>
+<td align="left">多设备总线</td>
+</tr>
+<tr>
+<td align="center"><code>0x33</code></td>
+<td align="left">Read ROM</td>
+<td align="left">读取 64 位 ROM 码</td>
+<td align="left">获取设备 ID</td>
+</tr>
+<tr>
+<td align="center"><code>0xF0</code></td>
+<td align="left">Search ROM</td>
+<td align="left">搜索所有设备</td>
+<td align="left">设备枚举</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="四、DS18B20-专属内容"><a href="#四、DS18B20-专属内容" class="headerlink" title="四、DS18B20 专属内容"></a>四、DS18B20 专属内容</h2><h3 id="4-1-功能指令（DS18B20-特定）"><a href="#4-1-功能指令（DS18B20-特定）" class="headerlink" title="4.1 功能指令（DS18B20 特定）"></a>4.1 功能指令（DS18B20 特定）</h3><table>
+<thead>
+<tr>
+<th align="center">指令码</th>
+<th align="left">名称</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>0x44</code></td>
+<td align="left">Convert T</td>
+<td align="left">启动温度转换（耗时 750ms）</td>
+</tr>
+<tr>
+<td align="center"><code>0xBE</code></td>
+<td align="left">Read Scratchpad</td>
+<td align="left">读取暂存器（含温度数据）</td>
+</tr>
+<tr>
+<td align="center"><code>0x4E</code></td>
+<td align="left">Write Scratchpad</td>
+<td align="left">写入配置（精度、报警阈值）</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="4-2-暂存器结构（9-字节）"><a href="#4-2-暂存器结构（9-字节）" class="headerlink" title="4.2 暂存器结构（9 字节）"></a>4.2 暂存器结构（9 字节）</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/20251111104128787.png"></p>
+<p>调用 <code>0xBE</code> 后，DS18B20 按顺序发送：</p>
+<table>
+<thead>
+<tr>
+<th align="center">字节索引</th>
+<th align="left">内容</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Byte 0</td>
+<td align="left">温度低 8 位（LSB）</td>
+<td align="left">第1次 <code>Read_DS18B20()</code></td>
+</tr>
+<tr>
+<td align="center">Byte 1</td>
+<td align="left">温度高 8 位（MSB）</td>
+<td align="left">第2次 <code>Read_DS18B20()</code></td>
+</tr>
+<tr>
+<td align="center">Byte 2</td>
+<td align="left">TH 寄存器</td>
+<td align="left">高温报警阈值</td>
+</tr>
+<tr>
+<td align="center">Byte 3</td>
+<td align="left">TL 寄存器</td>
+<td align="left">低温报警阈值</td>
+</tr>
+<tr>
+<td align="center">Byte 4</td>
+<td align="left">配置寄存器</td>
+<td align="left">精度设置（9&#x2F;10&#x2F;11&#x2F;12位）</td>
+</tr>
+<tr>
+<td align="center">Byte 5-7</td>
+<td align="left">保留</td>
+<td align="left">固定 0xFF</td>
+</tr>
+<tr>
+<td align="center">Byte 8</td>
+<td align="left">CRC 校验</td>
+<td align="left">数据完整性校验</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="4-3-温度数据格式"><a href="#4-3-温度数据格式" class="headerlink" title="4.3 温度数据格式"></a>4.3 温度数据格式</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/20251111104239787.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/20251111105018620.png"></p>
+<p><strong>16 位补码表示：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TEXT高字节 (MSB)              低字节 (LSB)</span><br><span class="line">S S S S S 2⁶ 2⁵ 2⁴   2³ 2² 2¹ 2⁰ 2⁻¹ 2⁻² 2⁻³ 2⁻⁴</span><br><span class="line">└─符号位─┘  └─整数部分─┘  └─────小数部分─────┘</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>分辨率</strong>：0.0625°C（1&#x2F;16）</li>
+<li><strong>范围</strong>：-55°C ~ +125°C</li>
+</ul>
+<p><strong>计算公式：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">温度 = (high &lt;&lt; 8 | low) / 16.0</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TEXT+25.0625°C:  0x0191 = 401 → 401/16 = 25.0625</span><br><span class="line">-10.125°C:   0xFF5E（补码）→ -162/16 = -10.125</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-4-完整读取温度代码"><a href="#4-4-完整读取温度代码" class="headerlink" title="4.4 完整读取温度代码"></a>4.4 完整读取温度代码</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/image-20251114104523084.png" alt="image-20251114104523084"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;onewire.h&quot;</span><br><span class="line">#include &quot;intrins.h&quot;</span><br><span class="line">sbit DQ = P1 ^ 4;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">float rd_temperature(void)</span><br><span class="line">&#123;</span><br><span class="line">    unsigned char low, high; // 用于存储温度的低位和高位字节</span><br><span class="line">   </span><br><span class="line">    init_ds18b20();         // 初始化DS18B20</span><br><span class="line">    Write_DS18B20(0xcc);    // 跳过ROM操作（适用于单总线只有一个设备的情况）</span><br><span class="line">    Write_DS18B20(0x44);    // 发送启动温度转换命令</span><br><span class="line"></span><br><span class="line">    init_ds18b20();         // 再次初始化DS18B20，准备读取</span><br><span class="line">    Write_DS18B20(0xcc);    // 跳过ROM操作</span><br><span class="line">    Write_DS18B20(0xbe);    // 发送读取暂存器命令</span><br><span class="line">    </span><br><span class="line">    low = Read_DS18B20();   // 读取温度值的低位字节</span><br><span class="line">    high = Read_DS18B20();  // 读取温度值的高位字节</span><br><span class="line">    </span><br><span class="line">    return ((high &lt;&lt; 8) | low) / 16.0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">Intrinsic Function（内嵌函数/固有函数）是一种特殊的函数。</span><br><span class="line">_nop_()：空操作（No Operation）。它会插入一个精确的机器周期延时，用于产生非常短的延时。</span><br><span class="line">_cror_()：循环右移（Circular Rotate Right）。</span><br><span class="line">_crol_()：循环左移（Circular Rotate Left）。</span><br><span class="line">_iror_()：带进位循环右移。</span><br><span class="line">_irol_()：带进位循环左移。</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────┐</span><br><span class="line">│         单总线 (One-Wire)            │  ← 通信协议（抽象规则）</span><br><span class="line">│   - 一种通信标准/协议                 │</span><br><span class="line">│   - 定义了时序规则                    │</span><br><span class="line">│   - 定义了通信流程                    │</span><br><span class="line">└──────────────┬──────────────────────┘</span><br><span class="line">               │ 遵循/实现</span><br><span class="line">               ▼</span><br><span class="line">┌─────────────────────────────────────┐</span><br><span class="line">│          DS18B20                    │  ← 具体芯片（实现者）</span><br><span class="line">│   - 一款温度传感器芯片                │</span><br><span class="line">│   - 使用单总线协议通信                │</span><br><span class="line">│   - 有自己特定的指令集                │</span><br><span class="line">└─────────────────────────────────────┘</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/RossLin.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/RossLin.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">RossLin</div><div class="post-copyright__author_desc">记录·思考·成长</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://rosslin.xyz/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://rosslin.xyz/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/')">3.单总线协议详解（DS18B20 ）</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/images/wechat_reward.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/wechat_reward.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/images/alipay_pay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/alipay_pay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://rosslin.xyz/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=3.单总线协议详解（DS18B20 ）&amp;url=https://rosslin.xyz/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/3.one_wire%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%88DS18B20%EF%BC%89/&amp;pic=https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/3.onewire协议.png" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rosslin.xyz" target="_blank">RossLin的数字花园</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>大学竞赛<span class="tagsPageCount">18</span></a><a class="post-meta__box__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>学习笔记<span class="tagsPageCount">18</span></a><a class="post-meta__box__tags" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>蓝桥杯<span class="tagsPageCount">12</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://5b9e583.webp.li/2026/01/2.定时器应用（舵机控制）.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/4.PCF8951.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">4.I2C协议（PCF8591）</div></div></a></div><div class="next-post pull-right"><a href="/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/10.%E8%B6%85%E5%A3%B0%E6%B3%A2%E6%B5%8B%E8%B7%9D%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/10.蓝桥杯超声波测距封面.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">10.超声波测距</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2025/11/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/1.LED%E5%BA%95%E5%B1%82%E4%BB%A3%E7%A0%81/" title="1.蓝桥杯LED模块"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/1.蓝桥杯LED模块.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-11-22</div><div class="title">1.蓝桥杯LED模块</div></div></a></div><div><a href="/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/10.%E8%B6%85%E5%A3%B0%E6%B3%A2%E6%B5%8B%E8%B7%9D%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0/" title="10.超声波测距"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/10.蓝桥杯超声波测距封面.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-11-24</div><div class="title">10.超声波测距</div></div></a></div><div><a href="/2025/11/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/11.%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" title="11.内存管理"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/11.内存管理.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-11-27</div><div class="title">11.内存管理</div></div></a></div><div><a href="/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/4.I2C%E5%8D%8F%E8%AE%AE(PCF8591)/" title="4.I2C协议（PCF8591）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/4.PCF8951.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-11-24</div><div class="title">4.I2C协议（PCF8591）</div></div></a></div><div><a href="/2025/11/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/5.I2C%E5%8D%8F%E8%AE%AE%20(AT24C02%20)/" title="5.I2C协议 (AT24C02 )）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/5.蓝桥杯I2C EEPROM协议封面.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-11-22</div><div class="title">5.I2C协议 (AT24C02 )）</div></div></a></div><div><a href="/2025/11/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/6.DS1302/" title="6.DS1302实时时钟"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/6.蓝桥杯DS1302实时时钟封面.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-11-24</div><div class="title">6.DS1302实时时钟</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/RossLin.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">一个在校大学生的日常碎碎念，记录学习笔记、读书和一点点生活感悟。</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">RossLin</h1><div class="author-info__desc">记录·思考·成长</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://rosslin.xyz//atom.xml" target="_blank" title="RSS"><i class="anzhiyufont anzhiyu-icon-rss"></i></a><a class="social-icon faa-parent animated-hover" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=xPb39vTz8PHy8vGEtbXqp6up" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3%EF%BC%88DS18B20-%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">单总线协议详解（DS18B20 ）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8D%95%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">一、单总线协议基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E6%80%BB%E7%BA%BF%EF%BC%9F"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 什么是单总线？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%BC%80%E6%BC%8F%E8%BE%93%E5%87%BA%E5%8E%9F%E7%90%86%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%81%EF%BC%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 开漏输出原理（重要！）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8D%95%E6%80%BB%E7%BA%BF%E6%97%B6%E5%BA%8F%EF%BC%88%E9%80%9A%E7%94%A8%E8%A7%84%E5%88%99%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">二、单总线时序（通用规则）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%97%B6%E5%BA%8F%EF%BC%88%E5%A4%8D%E4%BD%8D-%E5%BA%94%E7%AD%94%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 初始化时序（复位 + 应答）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%86%99%E6%97%B6%E5%BA%8F%EF%BC%88%E4%B8%BB%E6%9C%BA%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 写时序（主机发送数据）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99-0"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">写 0</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99-1"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">写 1</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E8%AF%BB%E6%97%B6%E5%BA%8F%EF%BC%88%E4%BB%8E%E6%9C%BA%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 读时序（从机发送数据）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8D%95%E6%80%BB%E7%BA%BF%E9%80%9A%E4%BF%A1%E6%B5%81%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text">三、单总线通信流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%A0%87%E5%87%86%E6%B5%81%E7%A8%8B%EF%BC%88%E5%9B%BA%E5%AE%9A%E9%A1%BA%E5%BA%8F%EF%BC%89"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 标准流程（固定顺序）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-ROM-%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4%EF%BC%88%E6%89%80%E6%9C%89%E5%8D%95%E6%80%BB%E7%BA%BF%E8%AE%BE%E5%A4%87%E9%80%9A%E7%94%A8%EF%BC%89"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 ROM 操作指令（所有单总线设备通用）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81DS18B20-%E4%B8%93%E5%B1%9E%E5%86%85%E5%AE%B9"><span class="toc-number">1.4.</span> <span class="toc-text">四、DS18B20 专属内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%8A%9F%E8%83%BD%E6%8C%87%E4%BB%A4%EF%BC%88DS18B20-%E7%89%B9%E5%AE%9A%EF%BC%89"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 功能指令（DS18B20 特定）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%9A%82%E5%AD%98%E5%99%A8%E7%BB%93%E6%9E%84%EF%BC%889-%E5%AD%97%E8%8A%82%EF%BC%89"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 暂存器结构（9 字节）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%B8%A9%E5%BA%A6%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 温度数据格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E5%AE%8C%E6%95%B4%E8%AF%BB%E5%8F%96%E6%B8%A9%E5%BA%A6%E4%BB%A3%E7%A0%81"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4 完整读取温度代码</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/2.%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BA%94%E7%94%A8%EF%BC%88%E8%88%B5%E6%9C%BA%E6%8E%A7%E5%88%B6%EF%BC%89/" title="2.定时器应用（舵机控制）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/01/2.定时器应用（舵机控制）.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2.定时器应用（舵机控制）"/></a><div class="content"><a class="title" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E8%93%9D%E6%A1%A5%E6%9D%AF/2.%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BA%94%E7%94%A8%EF%BC%88%E8%88%B5%E6%9C%BA%E6%8E%A7%E5%88%B6%EF%BC%89/" title="2.定时器应用（舵机控制）">2.定时器应用（舵机控制）</a><time datetime="2025-12-22T02:00:00.000Z" title="发表于 2025-12-22 10:00:00">2025-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/0.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E4%B8%8E%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" title="0.计算机的组成部分与存储结构"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/01/0.计算机的组成部分与存储结构.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0.计算机的组成部分与存储结构"/></a><div class="content"><a class="title" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/0.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E4%B8%8E%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" title="0.计算机的组成部分与存储结构">0.计算机的组成部分与存储结构</a><time datetime="2025-12-22T02:00:00.000Z" title="发表于 2025-12-22 10:00:00">2025-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/1.GPIO%E3%80%81%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/" title="1.GPIO、定时器与中断实战指南"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/01/1.GPIO、定时器与中断实战指南封面.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1.GPIO、定时器与中断实战指南"/></a><div class="content"><a class="title" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/1.GPIO%E3%80%81%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/" title="1.GPIO、定时器与中断实战指南">1.GPIO、定时器与中断实战指南</a><time datetime="2025-12-22T02:00:00.000Z" title="发表于 2025-12-22 10:00:00">2025-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/3.%E6%8C%89%E9%94%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E6%B6%88%E6%8A%96%E5%AE%9E%E7%8E%B0/" title="3.按键原理与消抖实现"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/01/3.按键原理与消抖实现.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="3.按键原理与消抖实现"/></a><div class="content"><a class="title" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/3.%E6%8C%89%E9%94%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E6%B6%88%E6%8A%96%E5%AE%9E%E7%8E%B0/" title="3.按键原理与消抖实现">3.按键原理与消抖实现</a><time datetime="2025-12-22T02:00:00.000Z" title="发表于 2025-12-22 10:00:00">2025-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/4.SPI%20%E5%8D%8F%E8%AE%AE%EF%BC%88LCD%20%E9%A9%B1%E5%8A%A8%EF%BC%89/" title="4.spi协议（LCD驱动）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/01/4.spi协议（LCD驱动）.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4.spi协议（LCD驱动）"/></a><div class="content"><a class="title" href="/2025/12/22/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/4.SPI%20%E5%8D%8F%E8%AE%AE%EF%BC%88LCD%20%E9%A9%B1%E5%8A%A8%EF%BC%89/" title="4.spi协议（LCD驱动）">4.spi协议（LCD驱动）</a><time datetime="2025-12-22T02:00:00.000Z" title="发表于 2025-12-22 10:00:00">2025-12-22</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=xPb39vTz8PHy8vGEtbXqp6up" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/RossLin.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/Roselin1217" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div><div class="footer_custom_text">© 2025-2030 RossLin · 解码底层逻辑：方寸芯片，浩瀚人心。</div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 - 2026 By <a class="footer-bar-link" href="/" title="RossLin" target="_blank">RossLin</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://hexo.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/" style="font-size: 0.88rem;">大学竞赛<sup>18</sup></a><a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">学习笔记<sup>18</sup></a><a href="/tags/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/" style="font-size: 0.88rem;">智能门锁<sup>6</sup></a><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="font-size: 0.88rem;">蓝桥杯<sup>12</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("11/22/2025 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2025 By 安知鱼 V1.6.15",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 RossLin 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.rosslin.xyz/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.44/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.rosslin.xyz/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.rosslin.xyz/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.44/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://cdn.cbd.int/qrcodejs@1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script id="click-show-text" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
