@@ -60,7 +60,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2026-02-02 14:52:40',
+  postUpdate: '2026-02-02 14:54:29',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -203,20 +203,20 @@
 <h3 id="1-安装-Node-js、npm-和-Hexo"><a href="#1-安装-Node-js、npm-和-Hexo" class="headerlink" title="1. 安装 Node.js、npm 和 Hexo"></a>1. 安装 Node.js、npm 和 Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install nodejs npm</span><br></pre></td></tr></table></figure>
 
 <p>如果出现hexo 提示“找不到命令”，这是 npm 全局安装路径的 PATH 环境变量问题。</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\RoseLin\AppData\Roaming\Typora\typora-user-images\环境变量问题.png" alt="环境变量问题"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/02/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98.png" alt="环境变量问题"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.npm-global                      												<span class="comment"># 创建专门放全局包的目录</span></span><br><span class="line">npm config <span class="built_in">set</span> prefix <span class="string">&#x27;~/.npm-global&#x27;</span>    												<span class="comment"># 告诉 npm 往这儿装</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=~/.npm-global/bin:$PATH&#x27;</span> &gt;&gt; ~/.bashrc 								<span class="comment"># 加入 PATH</span></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc                													    <span class="comment"># 重新加载，立即生效</span></span><br><span class="line"></span><br><span class="line">npm install -g hexo-cli 																<span class="comment"># 重新安装 Hexo 核心</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="2-初始化博客项目"><a href="#2-初始化博客项目" class="headerlink" title="2. 初始化博客项目"></a>2. 初始化博客项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/hexo-blog &amp;&amp; <span class="built_in">cd</span> ~/hexo-blog <span class="comment"># 创建博客大目录</span></span><br><span class="line">hexo init blog                      <span class="comment"># 初始化</span></span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install                         <span class="comment"># 安装依赖</span></span><br><span class="line">npm install hexo-deployer-git --save <span class="comment"># 必装！Git 部署插件</span></span><br></pre></td></tr></table></figure>
 
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\RoseLin\AppData\Roaming\Typora\typora-user-images\本地部署.png" alt="本地部署"></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\RoseLin\AppData\Roaming\Typora\typora-user-images\本地部署命令行.png" alt="本地部署命令行">安装完成后，输入 <code>hexo s</code> 启动预览，浏览器打开 <code>http://localhost:4000</code> 确认能看到默认页面，然后 Ctrl+C 停止服务器。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/02/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2.png" alt="本地部署"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/02/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4%E8%A1%8C.png" alt="本地部署命令行">安装完成后，输入 <code>hexo s</code> 启动预览，浏览器打开 <code>http://localhost:4000</code> 确认能看到默认页面，然后 Ctrl+C 停止服务器。</p>
 <hr>
 <h2 id="二、-本地连接-GitHub-SSH"><a href="#二、-本地连接-GitHub-SSH" class="headerlink" title="二、 本地连接 GitHub SSH"></a>二、 本地连接 GitHub SSH</h2><p>SSH (Secure Shell) 是一种加密的网络传输协议。配置它后，执行 hexo d 部署时就不用每次输密码了。</p>
 <h3 id="1-组件说明"><a href="#1-组件说明" class="headerlink" title="1. 组件说明"></a>1. 组件说明</h3><ul>
 <li>私钥 (id_ed25519)：母钥匙（绝不给别人），存在你的电脑里。</li>
 <li>公钥 (id_ed25519.pub)：子锁（公开给 GitHub），上传到 GitHub 设置里。</li>
-<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\RoseLin\AppData\Roaming\Typora\typora-user-images\SSH.png" alt="SSH"></li>
-<li>**<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\RoseLin\AppData\Roaming\Typora\typora-user-images\SSHli连接GitHub.png" alt="SSHli连接GitHub"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\RoseLin\AppData\Roaming\Typora\typora-user-images\测试连接.png" alt="测试连接"></li>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/02/SSH.png" alt="SSH"></li>
+<li>**<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/02/SSHli%E8%BF%9E%E6%8E%A5GitHub.png" alt="SSHli连接GitHub"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/02/%E6%B5%8B%E8%AF%95%E8%BF%9E%E6%8E%A5.png" alt="测试连接"></li>
 </ul>
 <h3 id="2-操作命令行"><a href="#2-操作命令行" class="headerlink" title="2. 操作命令行"></a>2. 操作命令行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C <span class="string">&quot;你的GitHub注册邮箱&quot;</span>     	<span class="comment">#生成SSH 密钥             全部直接按回车（共3次）</span></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_ed25519.pub   						<span class="comment">#显示“公钥”的内容   然后复制到GitHUB</span></span><br><span class="line">ssh -T git@github.com								<span class="comment">#测试是否能成功连接</span></span><br></pre></td></tr></table></figure>
 
@@ -231,7 +231,7 @@
 <li><p>类型：CNAME，名称：@，内容：用户名.github.io</p>
 </li>
 <li><p>类型：CNAME，名称：www，内容：用户名.github.io</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\RoseLin\AppData\Roaming\Typora\typora-user-images\使用自定义域名.png" alt="使用自定义域名"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://5b9e583.webp.li/2026/02/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.png" alt="使用自定义域名"></p>
 </li>
 </ul>
 <hr>
