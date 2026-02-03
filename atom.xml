@@ -139,26 +139,28 @@
   
   <entry>
     <title>导语</title>
-    <link href="https://rosslin.xyz/2026/01/16/%E6%96%87%E7%AB%A0/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%AF%BC%E8%AF%AD/"/>
-    <id>https://rosslin.xyz/2026/01/16/%E6%96%87%E7%AB%A0/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%AF%BC%E8%AF%AD/</id>
+    <link href="https://rosslin.xyz/2026/01/16/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E5%AF%BC%E8%AF%AD/"/>
+    <id>https://rosslin.xyz/2026/01/16/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E5%AF%BC%E8%AF%AD/</id>
     <published>2026-01-16T02:00:00.000Z</published>
-    <updated>2026-01-30T16:26:05.484Z</updated>
+    <updated>2026-01-30T16:25:43.450Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h1><p>这里没有代码，只有我对生活的感悟、对世界的态度。。</p><p>这里不会涉及敏感话题，不会被流量裹挟，所有观点仅代表个人。它们或许稚嫩，甚至未必正确，但绝对真诚；如果有说得不对的地方，欢迎随时交流探讨。</p><p>专栏里唯一固定的内容是年终总结。说来惭愧，本来计划多写点，奈何人太懒，再加上想写出有深度的文章实在太难了。</p><p>很多想法只是简单的记录下来  没有深入写下去。</p><p>在这个时代，能保持独立思考，真的挺不容易的。</p><p><img src="https://5b9e583.webp.li/2026/01/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0.png" alt="博客文章"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h1><p>这里记录了我以大学嵌入式竞赛及实战项目为切入点整理的核心笔记。</p><p>笔记涵盖领域</p><p>1.电子竞赛系列</p><ul><li>蓝桥杯单片机</li><li>西门子杯</li><li>智能车竞赛</li><li>嵌赛</li></ul><p>2.实战项目系列</p><ul><li>智能门锁</li><li>平衡车</li></ul><p>3.操作系统与软件工程</p><ul><li>RT-Thread</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;导语&quot;&gt;&lt;a href=&quot;#导语&quot; class=&quot;headerlink&quot; title=&quot;导语&quot;&gt;&lt;/a&gt;导语&lt;/h1&gt;&lt;p&gt;这里没有代码，只有我对生活的感悟、对世界的态度。。&lt;/p&gt;
-&lt;p&gt;这里不会涉及敏感话题，不会被流量裹挟，所有观点仅代表个人。它们或许稚嫩，甚</summary>
+    <summary type="html">&lt;h1 id=&quot;导语&quot;&gt;&lt;a href=&quot;#导语&quot; class=&quot;headerlink&quot; title=&quot;导语&quot;&gt;&lt;/a&gt;导语&lt;/h1&gt;&lt;p&gt;这里记录了我以大学嵌入式竞赛及实战项目为切入点整理的核心笔记。&lt;/p&gt;
+&lt;p&gt;笔记涵盖领域&lt;/p&gt;
+&lt;p&gt;1.电子竞赛系列&lt;/p&gt;
+&lt;ul&gt;</summary>
       
     
     
     
-    <category term="闲言碎语" scheme="https://rosslin.xyz/categories/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+    <category term="嵌入式之旅" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/"/>
     
     
-    <category term="闲言碎语" scheme="https://rosslin.xyz/tags/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+    <category term="嵌入式之旅" scheme="https://rosslin.xyz/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/"/>
     
     <category term="导语" scheme="https://rosslin.xyz/tags/%E5%AF%BC%E8%AF%AD/"/>
     
@@ -193,30 +195,28 @@
   
   <entry>
     <title>导语</title>
-    <link href="https://rosslin.xyz/2026/01/16/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E5%AF%BC%E8%AF%AD/"/>
-    <id>https://rosslin.xyz/2026/01/16/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E5%AF%BC%E8%AF%AD/</id>
+    <link href="https://rosslin.xyz/2026/01/16/%E6%96%87%E7%AB%A0/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%AF%BC%E8%AF%AD/"/>
+    <id>https://rosslin.xyz/2026/01/16/%E6%96%87%E7%AB%A0/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%AF%BC%E8%AF%AD/</id>
     <published>2026-01-16T02:00:00.000Z</published>
-    <updated>2026-01-30T16:25:43.450Z</updated>
+    <updated>2026-01-30T16:26:05.484Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h1><p>这里记录了我以大学嵌入式竞赛及实战项目为切入点整理的核心笔记。</p><p>笔记涵盖领域</p><p>1.电子竞赛系列</p><ul><li>蓝桥杯单片机</li><li>西门子杯</li><li>智能车竞赛</li><li>嵌赛</li></ul><p>2.实战项目系列</p><ul><li>智能门锁</li><li>平衡车</li></ul><p>3.操作系统与软件工程</p><ul><li>RT-Thread</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h1><p>这里没有代码，只有我对生活的感悟、对世界的态度。。</p><p>这里不会涉及敏感话题，不会被流量裹挟，所有观点仅代表个人。它们或许稚嫩，甚至未必正确，但绝对真诚；如果有说得不对的地方，欢迎随时交流探讨。</p><p>专栏里唯一固定的内容是年终总结。说来惭愧，本来计划多写点，奈何人太懒，再加上想写出有深度的文章实在太难了。</p><p>很多想法只是简单的记录下来  没有深入写下去。</p><p>在这个时代，能保持独立思考，真的挺不容易的。</p><p><img src="https://5b9e583.webp.li/2026/01/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0.png" alt="博客文章"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;导语&quot;&gt;&lt;a href=&quot;#导语&quot; class=&quot;headerlink&quot; title=&quot;导语&quot;&gt;&lt;/a&gt;导语&lt;/h1&gt;&lt;p&gt;这里记录了我以大学嵌入式竞赛及实战项目为切入点整理的核心笔记。&lt;/p&gt;
-&lt;p&gt;笔记涵盖领域&lt;/p&gt;
-&lt;p&gt;1.电子竞赛系列&lt;/p&gt;
-&lt;ul&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;导语&quot;&gt;&lt;a href=&quot;#导语&quot; class=&quot;headerlink&quot; title=&quot;导语&quot;&gt;&lt;/a&gt;导语&lt;/h1&gt;&lt;p&gt;这里没有代码，只有我对生活的感悟、对世界的态度。。&lt;/p&gt;
+&lt;p&gt;这里不会涉及敏感话题，不会被流量裹挟，所有观点仅代表个人。它们或许稚嫩，甚</summary>
       
     
     
     
-    <category term="嵌入式之旅" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/"/>
+    <category term="闲言碎语" scheme="https://rosslin.xyz/categories/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
     
     
     <category term="导语" scheme="https://rosslin.xyz/tags/%E5%AF%BC%E8%AF%AD/"/>
     
-    <category term="嵌入式之旅" scheme="https://rosslin.xyz/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/"/>
+    <category term="闲言碎语" scheme="https://rosslin.xyz/tags/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
     
   </entry>
   
@@ -243,93 +243,6 @@
     <category term="闲言碎语" scheme="https://rosslin.xyz/tags/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
     
     <category term="鬼话连篇" scheme="https://rosslin.xyz/tags/%E9%AC%BC%E8%AF%9D%E8%BF%9E%E7%AF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2025年终总结</title>
-    <link href="https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    <id>https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</id>
-    <published>2025-12-22T02:00:00.000Z</published>
-    <updated>2026-01-27T16:11:26.464Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="2025年终总结"><a href="#2025年终总结" class="headerlink" title="2025年终总结"></a>2025年终总结</h1><h2 id="关于家庭"><a href="#关于家庭" class="headerlink" title="关于家庭"></a>关于家庭</h2><p>每年的除夕，我们全家都会在我姐的张罗下拍全家福。但在2025年的开端，是个例外。</p><p>全家在低气压的状态中度过，我姐的工作面临变动，身体状况也亮起了红灯，这成了压在全家的一块巨石。</p><p>母亲的泪水留了又留，而作为家里最小的孩子，看着这一切，原来无能为力，才是最大的痛楚。在这</p><p>不过，好在这一切是短暂的，时间抚平了一切。</p><h2 id="大学生活"><a href="#大学生活" class="headerlink" title="大学生活"></a>大学生活</h2><p>大一的我，曾有个一段美好的志愿服务的时光，和小伙伴一起吃饭聊天 做游戏，做志愿，还有和舍友的爬山</p><p>不过美好的时光伴随着我转校区后戛然而止，所有的社会活动需要在新的环境下重新建立，也没有刚上大一时努力，开始渐渐迷上游戏、</p><p>后来我意识到不能再这样下去了。抱着空杯者的心态盲目目地去参加各种活动，我接触到了竞赛，进入了实验室，开始打各种各样的比赛</p><p>我很幸运，在2025年找到了自己的方向</p><h2 id="兼职"><a href="#兼职" class="headerlink" title="兼职"></a>兼职</h2><p>回看这一年，我是个身兼数职的牛马，食堂的早餐店，学校的器材室，在往前看，在小学门口发传单，寒暑假流水线上把一生都想明白的一天又一天，现在想想，我得给那个不知疲倦的自己敬个礼。，天生的牛马体。</p><p>不过，在明确了发展方向后，我开始意识到：单纯出卖体力的勤奋，失去了很多机会成本。</p><p>虽然这是一份没有报酬、仅包一餐的实习，但我心里的算盘打得很响：这既给了我正当理由在家休整，避开无效的体力劳动；又能申请“优秀个人”荣誉，成为我争取奖学金的重要筹码。</p><p>与其做些出卖体力的劳动 不如花时间投资自己去成长</p><h2 id="旅游"><a href="#旅游" class="headerlink" title="旅游"></a>旅游</h2><p>这一年我是幸福的</p><p>我去了香港研学。那五天是极限的：熬夜做PPT、维多利亚港的街头采访、港科大的调研。我也去了山西太原参加线下比赛，与其说是参加比赛，不如说是去旅游，完成了人生第一次租车自驾去到五台山，去了一些比较网红的商业街参加西门子杯全国总决赛。 </p><h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><p> 但我记得最深的，不是风景，而是一个瞬间。 那是我留校参加比赛夜晚回宿舍的路上，没有路灯，漆黑一片。一个女生独自坐在路中间的石墩上，掩面哭泣。 在这个时代，每个人都在负重前行，每个人都有深夜里说不出口的苦。 这一幕让我明白，技术之外，人更需要悲悯。</p><p>我们除了选择努力 别无选择。</p><h2 id="孤独"><a href="#孤独" class="headerlink" title="孤独"></a>孤独</h2><p>回顾这一年，“孤独”似乎是我的高频词。但我并不讨厌它。</p><p>我慢慢发现，自己拥有一种“屏蔽力”。我不会因为没人陪而放弃我想考的证，也不会因为要去陌生的城市而退缩。</p><p>印象最深的是西门子杯的全国总决赛。队伍里10个人，9个是谈笑风生的大四学长，只有我是大三的“孤勇者”。 我到现在都还清晰地记得去山西的前一晚：实验室空荡荡的，只有我一个人守着电脑和还没打样的PCB板。为了赶最早的一班车，我甚至来不及回宿舍，天还没亮就要跑去校外的站点拿快递。</p><p>那时候天很黑，风很冷，心里说不慌是假的。但当我一个人搞定所有突发状况站在赛场上时，我突然觉得，这种“不容易”恰恰是我成长的勋章。原来，一个人也可以是一支队伍。</p><h2 id="展望2026"><a href="#展望2026" class="headerlink" title="展望2026"></a>展望2026</h2><p>如果要给 2026 年定一个关键词，我希望是——勇敢。</p><p>2025 年的经验证明：行动往往止步于过度的思考。 </p><p>很多时候，机会的窗口期极短，而我总在迟疑过后陷入遗憾。不推开门，答案就永远包裹在黑盒里。</p><p>对我而言，世界上最痛苦的莫过于“遗憾”。在“如果当初”与“确定的结果（成功或失败、甜蜜或苦涩）”之间，我更愿意选择后者。</p><p>过去这一年，那些真正让我获得成长的瞬间，其实都挺“莽”的。</p><p>展望 2026，这将是我至关重要的一年：上半年冲刺大学竞赛，下半年开启职场实习。</p><p>勇敢的人未必先享受世界，但勇敢的人一定拥有更多的机会与可能。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;2025年终总结&quot;&gt;&lt;a href=&quot;#2025年终总结&quot; class=&quot;headerlink&quot; title=&quot;2025年终总结&quot;&gt;&lt;/a&gt;2025年终总结&lt;/h1&gt;&lt;h2 id=&quot;关于家庭&quot;&gt;&lt;a href=&quot;#关于家庭&quot; class=&quot;headerlink&quot; </summary>
-      
-    
-    
-    
-    <category term="闲言碎语" scheme="https://rosslin.xyz/categories/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
-    
-    <category term="年终总结" scheme="https://rosslin.xyz/categories/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="闲言碎语" scheme="https://rosslin.xyz/tags/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
-    
-    <category term="年终总结" scheme="https://rosslin.xyz/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>0.计算机的组成部分与存储结构</title>
-    <link href="https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/0.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E4%B8%8E%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/"/>
-    <id>https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/0.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E4%B8%8E%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</id>
-    <published>2025-12-22T02:00:00.000Z</published>
-    <updated>2026-01-27T15:43:36.577Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="🖥️-嵌入式标准库开发入门"><a href="#🖥️-嵌入式标准库开发入门" class="headerlink" title="🖥️ 嵌入式标准库开发入门"></a>🖥️ 嵌入式标准库开发入门</h1><h2 id="一、计算机的组成部分与存储结构"><a href="#一、计算机的组成部分与存储结构" class="headerlink" title="一、计算机的组成部分与存储结构"></a>一、计算机的组成部分与存储结构</h2><p><img src="https://5b9e583.webp.li/2026/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86.png" alt="计算机组成部分"></p><h3 id="📦-1-计算机三大组成部分"><a href="#📦-1-计算机三大组成部分" class="headerlink" title="📦 1. 计算机三大组成部分"></a>📦 1. 计算机三大组成部分</h3><h4 id="1️⃣-处理器（CPU-MCU）"><a href="#1️⃣-处理器（CPU-MCU）" class="headerlink" title="1️⃣ 处理器（CPU&#x2F;MCU）"></a>1️⃣ <strong>处理器（CPU&#x2F;MCU）</strong></h4><ul><li><strong>作用</strong>：计算机的”大脑”，负责执行指令和处理数据</li><li><strong>组成</strong>：<ul><li>运算单元（ALU）：执行算术和逻辑运算</li><li>控制单元（CU）：控制指令执行流程</li><li>寄存器组：临时存储数据</li></ul></li></ul><h4 id="2️⃣-内存"><a href="#2️⃣-内存" class="headerlink" title="2️⃣ 内存"></a>2️⃣ <strong>内存</strong></h4><ul><li><strong>RAM（随机存储器）</strong>：断电数据丢失，速度快</li><li><strong>ROM（只读存储器）</strong>：断电数据保留，存储程序代码</li><li><strong>Flash</strong>：可擦写的ROM，常用于存储程序</li></ul><h4 id="3️⃣-输入输出设备（I-O）"><a href="#3️⃣-输入输出设备（I-O）" class="headerlink" title="3️⃣ 输入输出设备（I&#x2F;O）"></a>3️⃣ <strong>输入输出设备（I&#x2F;O）</strong></h4><ul><li><strong>输入设备</strong>：按键、传感器、串口接收等</li><li><strong>输出设备</strong>：LED、显示屏、蜂鸣器、串口发送等</li><li><strong>GPIO</strong>：通用输入输出端口，最基本的I&#x2F;O接口</li></ul><h3 id="🗂️-2-计算机存储结构（层次化）"><a href="#🗂️-2-计算机存储结构（层次化）" class="headerlink" title="🗂️ 2. 计算机存储结构（层次化）"></a>🗂️ 2. 计算机存储结构（层次化）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">速度快 ←→ 速度慢</span><br><span class="line">容量小 ←→ 容量大</span><br><span class="line">价格高 ←→ 价格低</span><br><span class="line"></span><br><span class="line">┌─────────────┐</span><br><span class="line">│   寄存器     │ ← 最快，容量最小（几十个字节） cpu直接访问</span><br><span class="line">├─────────────┤</span><br><span class="line">│   缓存Cache  │ ← 很快（KB级别）</span><br><span class="line">├─────────────┤</span><br><span class="line">│   内存RAM    │ ← 较快（MB-GB级别）</span><br><span class="line">├─────────────┤</span><br><span class="line">│  Flash/ROM   │ ← 较慢（MB-GB级别）</span><br><span class="line">└─────────────┘</span><br></pre></td></tr></table></figure><hr><h2 id="二、寄存器与库开发方式"><a href="#二、寄存器与库开发方式" class="headerlink" title="二、寄存器与库开发方式"></a>二、寄存器与库开发方式</h2><h3 id="🔧-1-寄存器开发方式"><a href="#🔧-1-寄存器开发方式" class="headerlink" title="🔧 1. 寄存器开发方式"></a>🔧 1. 寄存器开发方式</h3><p><strong>寄存器</strong>是CPU内部的特殊存储单元，直接控制硬件功能。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void Timer0Init(void)//1毫秒@12.000MHz</span><br><span class="line">&#123;</span><br><span class="line">AUXR &amp;= 0x7F;//定时器时钟12T模式</span><br><span class="line">TMOD &amp;= 0xF0;//设置定时器模式</span><br><span class="line">TL0 = 0x18;//设置定时初值</span><br><span class="line">TH0 = 0xFC;//设置定时初值</span><br><span class="line">TF0 = 0;//清除TF0标志</span><br><span class="line">TR0 = 1;//定时器0开始计时</span><br><span class="line"></span><br><span class="line">ET0 =1;</span><br><span class="line">EA =1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接操作寄存器示例（以STM32为例）</span></span><br><span class="line"><span class="comment">// 点亮PC13引脚的LED</span></span><br><span class="line">*(<span class="type">unsigned</span> <span class="type">int</span>*)(<span class="number">0x40011010</span>) |= (<span class="number">1</span>&lt;&lt;<span class="number">13</span>);  <span class="comment">// 直接操作GPIOC的ODR寄存器</span></span><br></pre></td></tr></table></figure><p><strong>特点</strong>：</p><ul><li>✅ 执行效率最高</li><li>✅ 代码体积小</li><li>❌ 可读性差</li><li>❌ 移植性差</li></ul><h3 id="📚-2-标准库开发方式"><a href="#📚-2-标准库开发方式" class="headerlink" title="📚 2. 标准库开发方式"></a>📚 2. 标准库开发方式</h3><p>厂商提供的函数库，封装了寄存器操作。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用标准库点亮LED</span></span><br><span class="line">GPIO_SetBits(GPIOC, GPIO_Pin_13);  <span class="comment">// 通过函数操作</span></span><br></pre></td></tr></table></figure><p><strong>特点</strong>：</p><ul><li>✅ 可读性好</li><li>✅ 开发效率高</li><li>✅ 易于维护</li><li>❌ 代码体积较大</li><li>❌ 执行效率略低</li></ul><h3 id="🆚-开发方式对比"><a href="#🆚-开发方式对比" class="headerlink" title="🆚 开发方式对比"></a>🆚 开发方式对比</h3><table><thead><tr><th align="center">特性</th><th align="center">寄存器开发</th><th align="center">标准库开发</th></tr></thead><tbody><tr><td align="center">学习难度</td><td align="center">高</td><td align="center">低</td></tr><tr><td align="center">开发速度</td><td align="center">慢</td><td align="center">快</td></tr><tr><td align="center">代码可读性</td><td align="center">差</td><td align="center">好</td></tr><tr><td align="center">执行效率</td><td align="center">最高</td><td align="center">较高</td></tr><tr><td align="center">适用场景</td><td align="center">资源受限&#x2F;高性能要求</td><td align="center">一般应用开发</td></tr></tbody></table><hr>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;🖥️-嵌入式标准库开发入门&quot;&gt;&lt;a href=&quot;#🖥️-嵌入式标准库开发入门&quot; class=&quot;headerlink&quot; title=&quot;🖥️ 嵌入式标准库开发入门&quot;&gt;&lt;/a&gt;🖥️ 嵌入式标准库开发入门&lt;/h1&gt;&lt;h2 id=&quot;一、计算机的组成部分与存储结构&quot;&gt;</summary>
-      
-    
-    
-    
-    <category term="嵌入式之旅" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/"/>
-    
-    <category term="智能门锁" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/"/>
-    
-    
-    <category term="大学竞赛" scheme="https://rosslin.xyz/tags/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/"/>
-    
-    <category term="学习笔记" scheme="https://rosslin.xyz/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="智能门锁" scheme="https://rosslin.xyz/tags/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2.定时器应用（舵机控制）</title>
-    <link href="https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/2.%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BA%94%E7%94%A8%EF%BC%88%E8%88%B5%E6%9C%BA%E6%8E%A7%E5%88%B6%EF%BC%89/"/>
-    <id>https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/2.%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BA%94%E7%94%A8%EF%BC%88%E8%88%B5%E6%9C%BA%E6%8E%A7%E5%88%B6%EF%BC%89/</id>
-    <published>2025-12-22T02:00:00.000Z</published>
-    <updated>2026-01-27T15:43:51.304Z</updated>
-    
-    <content type="html"><![CDATA[<hr><h1 id="定时器与舵机控制"><a href="#定时器与舵机控制" class="headerlink" title="定时器与舵机控制"></a>定时器与舵机控制</h1><p><strong><img src="https://5b9e583.webp.li/2026/01/2.%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E5%BA%94%E7%94%A8.png" alt="2.定时器的应用"></strong></p><h2 id="一、理论基础：PWM与舵机"><a href="#一、理论基础：PWM与舵机" class="headerlink" title="一、理论基础：PWM与舵机"></a>一、理论基础：PWM与舵机</h2><h3 id="1-PWM-脉冲宽度调制-核心概念"><a href="#1-PWM-脉冲宽度调制-核心概念" class="headerlink" title="1. PWM (脉冲宽度调制) 核心概念"></a>1. PWM (脉冲宽度调制) 核心概念</h3><p>PWM 是一种利用数字信号控制模拟电路的技术，通过改变脉冲的宽度（高电平时间）来调整输出的平均电压或信号特征。</p><table><thead><tr><th>参数</th><th>说明</th><th>计算公式</th></tr></thead><tbody><tr><td>周期</td><td>一个完整PWM波形的时间</td><td>T &#x3D; (ARR+1) × (PSC+1) &#x2F; 时钟频率</td></tr><tr><td>频率</td><td>每秒PWM波形个数</td><td>f &#x3D; 1&#x2F;T</td></tr><tr><td>占空比</td><td>高电平时间占比</td><td>占空比 &#x3D; CCR&#x2F;(ARR+1) × 100%</td></tr></tbody></table><h3 id="2-舵机控制原理"><a href="#2-舵机控制原理" class="headerlink" title="2. 舵机控制原理"></a>2. 舵机控制原理</h3><p>舵机通过接收 PWM 信号的脉冲宽度（高电平持续时间）来决定输出轴的旋转角度。它属于位置控制，而非简单的速度或方向控制。</p><ul><li>工作参数：<ul><li>电压：4.8V ~ 6V (推荐 5V)</li><li>周期：20ms (50Hz)</li><li>有效脉宽：0.5ms ~ 2.5ms</li></ul></li><li>脉宽与角度映射表：</li></ul><table><thead><tr><th>脉冲宽度 (高电平)</th><th>对应角度</th><th>说明</th><th>CCR值 (基于1MHz计数)</th></tr></thead><tbody><tr><td>0.5ms</td><td>0°</td><td>起始位置</td><td>500</td></tr><tr><td>1.0ms</td><td>45°</td><td>-</td><td>1000</td></tr><tr><td>1.5ms</td><td>90°</td><td>中位</td><td>1500</td></tr><tr><td>2.0ms</td><td>135°</td><td>-</td><td>2000</td></tr><tr><td>2.5ms</td><td>180°</td><td>结束位置</td><td>2500</td></tr></tbody></table><blockquote><p>计算公式：角度 &#x3D; (脉冲宽度-0.5) × 90</p></blockquote><hr><h2 id="二、硬件连接指南"><a href="#二、硬件连接指南" class="headerlink" title="二、硬件连接指南"></a>二、硬件连接指南</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">舵机</span><br><span class="line">5v  (红线) 连接到降压模块</span><br><span class="line">PA0 PWM信号线（黄线）连接到单片机</span><br><span class="line">GND (黑线) </span><br><span class="line">注意：减压模块和单片机需要公地</span><br></pre></td></tr></table></figure><p>**<img src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/image-20250921142637573.png" alt="舵机"></p><hr><h2 id="三、STM32-代码实现"><a href="#三、STM32-代码实现" class="headerlink" title="三、STM32 代码实现"></a>三、STM32 代码实现</h2><h3 id="1-核心配置思路"><a href="#1-核心配置思路" class="headerlink" title="1. 核心配置思路"></a>1. 核心配置思路</h3><p>要实现题目要求的 0° -&gt; 90° -&gt; 0° 模拟开门动作：</p><ol><li>时钟源：配置定时器预分频，使计数器频率为 1MHz (1us 跳变一次)，方便计算。</li><li>周期：设置 ARR 为 19999 (即 20000次计数 &#x3D; 20ms)。</li><li>动作：在 <code>main</code> 函数中修改 CCR 值（比较值）来改变占空比。</li></ol><h3 id="2-代码封装"><a href="#2-代码封装" class="headerlink" title="2. 代码封装"></a>2. 代码封装</h3><h4 id="宏定义与头文件"><a href="#宏定义与头文件" class="headerlink" title="宏定义与头文件"></a>宏定义与头文件</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> PWM_PERIOD 20000  <span class="comment">// PWM周期为20ms (20000us)</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PWM_MIN 500       <span class="comment">// 最小脉宽为0.5ms (500us)</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PWM_MAX 2500      <span class="comment">// 最大脉宽为2.5ms (2500us)</span></span></span><br></pre></td></tr></table></figure><h4 id="初始化函数-GPIO-Timer"><a href="#初始化函数-GPIO-Timer" class="headerlink" title="初始化函数 (GPIO + Timer)"></a>初始化函数 (GPIO + Timer)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Servo_PWM_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 1. 开启时钟：TIM2 和 GPIOA</span></span><br><span class="line">    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);</span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. GPIO配置 (PA0 复用推挽输出)</span></span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0; <span class="comment">// TIM2_CH1 对应 PA0</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP; <span class="comment">// 复用推挽是关键！</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 定时器时基配置 (决定 PWM 频率)</span></span><br><span class="line">    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;</span><br><span class="line">    TIM_TimeBaseStructure.TIM_Period = PWM_PERIOD - <span class="number">1</span>;     <span class="comment">// ARR: 19999</span></span><br><span class="line">    TIM_TimeBaseStructure.TIM_Prescaler = PWM_PRESCALER;   <span class="comment">// PSC: 71 (1MHz计数频率)</span></span><br><span class="line">    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;</span><br><span class="line">    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;</span><br><span class="line">    TIM_TimeBaseInit(TIM2, &amp;TIM_TimeBaseStructure);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 4. 输出比较通道配置 (决定 PWM 占空比)</span></span><br><span class="line">    TIM_OCInitTypeDef TIM_OCInitStructure;</span><br><span class="line">    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;      <span class="comment">// PWM模式1</span></span><br><span class="line">    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; <span class="comment">// 使能输出</span></span><br><span class="line">    TIM_OCInitStructure.TIM_Pulse = SERVO_0_DEG;           <span class="comment">// 初始位置 0度</span></span><br><span class="line">    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;     <span class="comment">// 极性高</span></span><br><span class="line">    TIM_OC1Init(TIM2, &amp;TIM_OCInitStructure); <span class="comment">// 初始化通道1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 5. 使能预装载 (平滑切换)</span></span><br><span class="line">    TIM_OC1PreloadConfig(TIM2, TIM_OCPreload_Enable);</span><br><span class="line">    TIM_ARRPreloadConfig(TIM2, ENABLE);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 6. 开启定时器</span></span><br><span class="line">    TIM_Cmd(TIM2, ENABLE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="主函数逻辑-实现开门模拟"><a href="#主函数逻辑-实现开门模拟" class="headerlink" title="主函数逻辑 (实现开门模拟)"></a>主函数逻辑 (实现开门模拟)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Lock</span><span class="params">(u8 enable)</span></span><br><span class="line"> &#123;</span><br><span class="line">     <span class="keyword">if</span>(enable)  <span class="comment">//开锁</span></span><br><span class="line">         TIM_SetCompare1(TIM2, <span class="number">1500</span>);<span class="comment">//设置占空比   500/2000 =25%</span></span><br><span class="line">     <span class="keyword">else</span>  <span class="comment">//锁上的状态</span></span><br><span class="line">         TIM_SetCompare1(TIM2, <span class="number">500</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><hr><h2 id="四、核心疑难解析"><a href="#四、核心疑难解析" class="headerlink" title="四、核心疑难解析"></a>四、核心疑难解析</h2><h3 id="1-普通定时器-vs-PWM输出"><a href="#1-普通定时器-vs-PWM输出" class="headerlink" title="1. 普通定时器 vs PWM输出"></a>1. 普通定时器 vs PWM输出</h3><p>这两个概念是包含关系：</p><table><thead><tr><th>功能模块</th><th>关注点</th><th>关键结构体</th><th>作用</th></tr></thead><tbody><tr><td>时基单元 (TimeBase)</td><td>频率、周期</td><td><code>TIM_TimeBaseInitTypeDef</code></td><td>相当于”秒表”，决定数数的快慢和上限。</td></tr><tr><td>输出比较 (OutputCompare)</td><td>占空比、极性</td><td><code>TIM_OCInitTypeDef</code></td><td>相当于”裁判”，根据秒表的数值决定何时输出高&#x2F;低电平。</td></tr></tbody></table><ul><li>总结：配置 PWM 必须先配置时基单元（定频率），再配置输出比较单元（定占空比）。</li></ul><h3 id="2-GPIO-复用功能-AFIO"><a href="#2-GPIO-复用功能-AFIO" class="headerlink" title="2. GPIO 复用功能 (AFIO)"></a>2. GPIO 复用功能 (AFIO)</h3><p>为什么 PA0 要设为 <code>GPIO_Mode_AF_PP</code> (复用推挽)?</p><ul><li>普通模式：GPIO 的高低电平由 <code>ODR</code> 寄存器控制（即代码里的 <code>GPIO_SetBits</code>）。</li><li>复用模式：GPIO 的控制权移交给了片上外设（这里是 TIM2）。</li><li>流程：TIM2 内部产生 PWM 信号 -&gt; 传递给复用控制器 -&gt; PA0 引脚输出。如果不开启复用，TIM2 产生的信号就无法传送到引脚上。</li></ul><hr><h2 id="五、关键配置参数速查表"><a href="#五、关键配置参数速查表" class="headerlink" title="五、关键配置参数速查表"></a>五、关键配置参数速查表</h2><table><thead><tr><th>参数名</th><th>解释</th><th>典型配置 (舵机)</th></tr></thead><tbody><tr><td><code>TIM_Period</code> (ARR)</td><td>周期：决定 PWM 的总时长</td><td>19999 (对应20ms)</td></tr><tr><td><code>TIM_Prescaler</code> (PSC)</td><td>分频：决定计数的快慢</td><td>71 (使计数频率为1MHz)</td></tr><tr><td><code>TIM_Pulse</code> (CCR)</td><td>脉宽：决定高电平时间</td><td>500<del>2500 (对应0.5</del>2.5ms)</td></tr><tr><td><code>TIM_OCMode</code></td><td>模式：PWM1 vs PWM2</td><td><code>TIM_OCMode_PWM1</code> (计数值&lt;CCR时有效)</td></tr><tr><td><code>TIM_OCPolarity</code></td><td>极性：有效电平是高还是低</td><td><code>TIM_OCPolarity_High</code></td></tr></tbody></table><hr>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;h1 id=&quot;定时器与舵机控制&quot;&gt;&lt;a href=&quot;#定时器与舵机控制&quot; class=&quot;headerlink&quot; title=&quot;定时器与舵机控制&quot;&gt;&lt;/a&gt;定时器与舵机控制&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;img src=&quot;https://5b9e583.webp.li</summary>
-      
-    
-    
-    
-    <category term="嵌入式之旅" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/"/>
-    
-    <category term="智能门锁" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/"/>
-    
-    
-    <category term="学习笔记" scheme="https://rosslin.xyz/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="智能门锁" scheme="https://rosslin.xyz/tags/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/"/>
     
   </entry>
   
@@ -395,6 +308,65 @@
   </entry>
   
   <entry>
+    <title>0.计算机的组成部分与存储结构</title>
+    <link href="https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/0.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E4%B8%8E%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/"/>
+    <id>https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/0.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%E4%B8%8E%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</id>
+    <published>2025-12-22T02:00:00.000Z</published>
+    <updated>2026-01-27T15:43:36.577Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="🖥️-嵌入式标准库开发入门"><a href="#🖥️-嵌入式标准库开发入门" class="headerlink" title="🖥️ 嵌入式标准库开发入门"></a>🖥️ 嵌入式标准库开发入门</h1><h2 id="一、计算机的组成部分与存储结构"><a href="#一、计算机的组成部分与存储结构" class="headerlink" title="一、计算机的组成部分与存储结构"></a>一、计算机的组成部分与存储结构</h2><p><img src="https://5b9e583.webp.li/2026/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86.png" alt="计算机组成部分"></p><h3 id="📦-1-计算机三大组成部分"><a href="#📦-1-计算机三大组成部分" class="headerlink" title="📦 1. 计算机三大组成部分"></a>📦 1. 计算机三大组成部分</h3><h4 id="1️⃣-处理器（CPU-MCU）"><a href="#1️⃣-处理器（CPU-MCU）" class="headerlink" title="1️⃣ 处理器（CPU&#x2F;MCU）"></a>1️⃣ <strong>处理器（CPU&#x2F;MCU）</strong></h4><ul><li><strong>作用</strong>：计算机的”大脑”，负责执行指令和处理数据</li><li><strong>组成</strong>：<ul><li>运算单元（ALU）：执行算术和逻辑运算</li><li>控制单元（CU）：控制指令执行流程</li><li>寄存器组：临时存储数据</li></ul></li></ul><h4 id="2️⃣-内存"><a href="#2️⃣-内存" class="headerlink" title="2️⃣ 内存"></a>2️⃣ <strong>内存</strong></h4><ul><li><strong>RAM（随机存储器）</strong>：断电数据丢失，速度快</li><li><strong>ROM（只读存储器）</strong>：断电数据保留，存储程序代码</li><li><strong>Flash</strong>：可擦写的ROM，常用于存储程序</li></ul><h4 id="3️⃣-输入输出设备（I-O）"><a href="#3️⃣-输入输出设备（I-O）" class="headerlink" title="3️⃣ 输入输出设备（I&#x2F;O）"></a>3️⃣ <strong>输入输出设备（I&#x2F;O）</strong></h4><ul><li><strong>输入设备</strong>：按键、传感器、串口接收等</li><li><strong>输出设备</strong>：LED、显示屏、蜂鸣器、串口发送等</li><li><strong>GPIO</strong>：通用输入输出端口，最基本的I&#x2F;O接口</li></ul><h3 id="🗂️-2-计算机存储结构（层次化）"><a href="#🗂️-2-计算机存储结构（层次化）" class="headerlink" title="🗂️ 2. 计算机存储结构（层次化）"></a>🗂️ 2. 计算机存储结构（层次化）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">速度快 ←→ 速度慢</span><br><span class="line">容量小 ←→ 容量大</span><br><span class="line">价格高 ←→ 价格低</span><br><span class="line"></span><br><span class="line">┌─────────────┐</span><br><span class="line">│   寄存器     │ ← 最快，容量最小（几十个字节） cpu直接访问</span><br><span class="line">├─────────────┤</span><br><span class="line">│   缓存Cache  │ ← 很快（KB级别）</span><br><span class="line">├─────────────┤</span><br><span class="line">│   内存RAM    │ ← 较快（MB-GB级别）</span><br><span class="line">├─────────────┤</span><br><span class="line">│  Flash/ROM   │ ← 较慢（MB-GB级别）</span><br><span class="line">└─────────────┘</span><br></pre></td></tr></table></figure><hr><h2 id="二、寄存器与库开发方式"><a href="#二、寄存器与库开发方式" class="headerlink" title="二、寄存器与库开发方式"></a>二、寄存器与库开发方式</h2><h3 id="🔧-1-寄存器开发方式"><a href="#🔧-1-寄存器开发方式" class="headerlink" title="🔧 1. 寄存器开发方式"></a>🔧 1. 寄存器开发方式</h3><p><strong>寄存器</strong>是CPU内部的特殊存储单元，直接控制硬件功能。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void Timer0Init(void)//1毫秒@12.000MHz</span><br><span class="line">&#123;</span><br><span class="line">AUXR &amp;= 0x7F;//定时器时钟12T模式</span><br><span class="line">TMOD &amp;= 0xF0;//设置定时器模式</span><br><span class="line">TL0 = 0x18;//设置定时初值</span><br><span class="line">TH0 = 0xFC;//设置定时初值</span><br><span class="line">TF0 = 0;//清除TF0标志</span><br><span class="line">TR0 = 1;//定时器0开始计时</span><br><span class="line"></span><br><span class="line">ET0 =1;</span><br><span class="line">EA =1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接操作寄存器示例（以STM32为例）</span></span><br><span class="line"><span class="comment">// 点亮PC13引脚的LED</span></span><br><span class="line">*(<span class="type">unsigned</span> <span class="type">int</span>*)(<span class="number">0x40011010</span>) |= (<span class="number">1</span>&lt;&lt;<span class="number">13</span>);  <span class="comment">// 直接操作GPIOC的ODR寄存器</span></span><br></pre></td></tr></table></figure><p><strong>特点</strong>：</p><ul><li>✅ 执行效率最高</li><li>✅ 代码体积小</li><li>❌ 可读性差</li><li>❌ 移植性差</li></ul><h3 id="📚-2-标准库开发方式"><a href="#📚-2-标准库开发方式" class="headerlink" title="📚 2. 标准库开发方式"></a>📚 2. 标准库开发方式</h3><p>厂商提供的函数库，封装了寄存器操作。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用标准库点亮LED</span></span><br><span class="line">GPIO_SetBits(GPIOC, GPIO_Pin_13);  <span class="comment">// 通过函数操作</span></span><br></pre></td></tr></table></figure><p><strong>特点</strong>：</p><ul><li>✅ 可读性好</li><li>✅ 开发效率高</li><li>✅ 易于维护</li><li>❌ 代码体积较大</li><li>❌ 执行效率略低</li></ul><h3 id="🆚-开发方式对比"><a href="#🆚-开发方式对比" class="headerlink" title="🆚 开发方式对比"></a>🆚 开发方式对比</h3><table><thead><tr><th align="center">特性</th><th align="center">寄存器开发</th><th align="center">标准库开发</th></tr></thead><tbody><tr><td align="center">学习难度</td><td align="center">高</td><td align="center">低</td></tr><tr><td align="center">开发速度</td><td align="center">慢</td><td align="center">快</td></tr><tr><td align="center">代码可读性</td><td align="center">差</td><td align="center">好</td></tr><tr><td align="center">执行效率</td><td align="center">最高</td><td align="center">较高</td></tr><tr><td align="center">适用场景</td><td align="center">资源受限&#x2F;高性能要求</td><td align="center">一般应用开发</td></tr></tbody></table><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;🖥️-嵌入式标准库开发入门&quot;&gt;&lt;a href=&quot;#🖥️-嵌入式标准库开发入门&quot; class=&quot;headerlink&quot; title=&quot;🖥️ 嵌入式标准库开发入门&quot;&gt;&lt;/a&gt;🖥️ 嵌入式标准库开发入门&lt;/h1&gt;&lt;h2 id=&quot;一、计算机的组成部分与存储结构&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="嵌入式之旅" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/"/>
+    
+    <category term="智能门锁" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/"/>
+    
+    
+    <category term="大学竞赛" scheme="https://rosslin.xyz/tags/%E5%A4%A7%E5%AD%A6%E7%AB%9E%E8%B5%9B/"/>
+    
+    <category term="学习笔记" scheme="https://rosslin.xyz/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="智能门锁" scheme="https://rosslin.xyz/tags/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2.定时器应用（舵机控制）</title>
+    <link href="https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/2.%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BA%94%E7%94%A8%EF%BC%88%E8%88%B5%E6%9C%BA%E6%8E%A7%E5%88%B6%EF%BC%89/"/>
+    <id>https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/2.%E5%AE%9A%E6%97%B6%E5%99%A8%E5%BA%94%E7%94%A8%EF%BC%88%E8%88%B5%E6%9C%BA%E6%8E%A7%E5%88%B6%EF%BC%89/</id>
+    <published>2025-12-22T02:00:00.000Z</published>
+    <updated>2026-01-27T15:43:51.304Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="定时器与舵机控制"><a href="#定时器与舵机控制" class="headerlink" title="定时器与舵机控制"></a>定时器与舵机控制</h1><p><strong><img src="https://5b9e583.webp.li/2026/01/2.%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E5%BA%94%E7%94%A8.png" alt="2.定时器的应用"></strong></p><h2 id="一、理论基础：PWM与舵机"><a href="#一、理论基础：PWM与舵机" class="headerlink" title="一、理论基础：PWM与舵机"></a>一、理论基础：PWM与舵机</h2><h3 id="1-PWM-脉冲宽度调制-核心概念"><a href="#1-PWM-脉冲宽度调制-核心概念" class="headerlink" title="1. PWM (脉冲宽度调制) 核心概念"></a>1. PWM (脉冲宽度调制) 核心概念</h3><p>PWM 是一种利用数字信号控制模拟电路的技术，通过改变脉冲的宽度（高电平时间）来调整输出的平均电压或信号特征。</p><table><thead><tr><th>参数</th><th>说明</th><th>计算公式</th></tr></thead><tbody><tr><td>周期</td><td>一个完整PWM波形的时间</td><td>T &#x3D; (ARR+1) × (PSC+1) &#x2F; 时钟频率</td></tr><tr><td>频率</td><td>每秒PWM波形个数</td><td>f &#x3D; 1&#x2F;T</td></tr><tr><td>占空比</td><td>高电平时间占比</td><td>占空比 &#x3D; CCR&#x2F;(ARR+1) × 100%</td></tr></tbody></table><h3 id="2-舵机控制原理"><a href="#2-舵机控制原理" class="headerlink" title="2. 舵机控制原理"></a>2. 舵机控制原理</h3><p>舵机通过接收 PWM 信号的脉冲宽度（高电平持续时间）来决定输出轴的旋转角度。它属于位置控制，而非简单的速度或方向控制。</p><ul><li>工作参数：<ul><li>电压：4.8V ~ 6V (推荐 5V)</li><li>周期：20ms (50Hz)</li><li>有效脉宽：0.5ms ~ 2.5ms</li></ul></li><li>脉宽与角度映射表：</li></ul><table><thead><tr><th>脉冲宽度 (高电平)</th><th>对应角度</th><th>说明</th><th>CCR值 (基于1MHz计数)</th></tr></thead><tbody><tr><td>0.5ms</td><td>0°</td><td>起始位置</td><td>500</td></tr><tr><td>1.0ms</td><td>45°</td><td>-</td><td>1000</td></tr><tr><td>1.5ms</td><td>90°</td><td>中位</td><td>1500</td></tr><tr><td>2.0ms</td><td>135°</td><td>-</td><td>2000</td></tr><tr><td>2.5ms</td><td>180°</td><td>结束位置</td><td>2500</td></tr></tbody></table><blockquote><p>计算公式：角度 &#x3D; (脉冲宽度-0.5) × 90</p></blockquote><hr><h2 id="二、硬件连接指南"><a href="#二、硬件连接指南" class="headerlink" title="二、硬件连接指南"></a>二、硬件连接指南</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">舵机</span><br><span class="line">5v  (红线) 连接到降压模块</span><br><span class="line">PA0 PWM信号线（黄线）连接到单片机</span><br><span class="line">GND (黑线) </span><br><span class="line">注意：减压模块和单片机需要公地</span><br></pre></td></tr></table></figure><p>**<img src="https://raw.githubusercontent.com/Roselin1217/roselin-images/main/images/image-20250921142637573.png" alt="舵机"></p><hr><h2 id="三、STM32-代码实现"><a href="#三、STM32-代码实现" class="headerlink" title="三、STM32 代码实现"></a>三、STM32 代码实现</h2><h3 id="1-核心配置思路"><a href="#1-核心配置思路" class="headerlink" title="1. 核心配置思路"></a>1. 核心配置思路</h3><p>要实现题目要求的 0° -&gt; 90° -&gt; 0° 模拟开门动作：</p><ol><li>时钟源：配置定时器预分频，使计数器频率为 1MHz (1us 跳变一次)，方便计算。</li><li>周期：设置 ARR 为 19999 (即 20000次计数 &#x3D; 20ms)。</li><li>动作：在 <code>main</code> 函数中修改 CCR 值（比较值）来改变占空比。</li></ol><h3 id="2-代码封装"><a href="#2-代码封装" class="headerlink" title="2. 代码封装"></a>2. 代码封装</h3><h4 id="宏定义与头文件"><a href="#宏定义与头文件" class="headerlink" title="宏定义与头文件"></a>宏定义与头文件</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> PWM_PERIOD 20000  <span class="comment">// PWM周期为20ms (20000us)</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PWM_MIN 500       <span class="comment">// 最小脉宽为0.5ms (500us)</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PWM_MAX 2500      <span class="comment">// 最大脉宽为2.5ms (2500us)</span></span></span><br></pre></td></tr></table></figure><h4 id="初始化函数-GPIO-Timer"><a href="#初始化函数-GPIO-Timer" class="headerlink" title="初始化函数 (GPIO + Timer)"></a>初始化函数 (GPIO + Timer)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Servo_PWM_Init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 1. 开启时钟：TIM2 和 GPIOA</span></span><br><span class="line">    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);</span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. GPIO配置 (PA0 复用推挽输出)</span></span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0; <span class="comment">// TIM2_CH1 对应 PA0</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP; <span class="comment">// 复用推挽是关键！</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 定时器时基配置 (决定 PWM 频率)</span></span><br><span class="line">    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;</span><br><span class="line">    TIM_TimeBaseStructure.TIM_Period = PWM_PERIOD - <span class="number">1</span>;     <span class="comment">// ARR: 19999</span></span><br><span class="line">    TIM_TimeBaseStructure.TIM_Prescaler = PWM_PRESCALER;   <span class="comment">// PSC: 71 (1MHz计数频率)</span></span><br><span class="line">    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;</span><br><span class="line">    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;</span><br><span class="line">    TIM_TimeBaseInit(TIM2, &amp;TIM_TimeBaseStructure);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 4. 输出比较通道配置 (决定 PWM 占空比)</span></span><br><span class="line">    TIM_OCInitTypeDef TIM_OCInitStructure;</span><br><span class="line">    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;      <span class="comment">// PWM模式1</span></span><br><span class="line">    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; <span class="comment">// 使能输出</span></span><br><span class="line">    TIM_OCInitStructure.TIM_Pulse = SERVO_0_DEG;           <span class="comment">// 初始位置 0度</span></span><br><span class="line">    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;     <span class="comment">// 极性高</span></span><br><span class="line">    TIM_OC1Init(TIM2, &amp;TIM_OCInitStructure); <span class="comment">// 初始化通道1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 5. 使能预装载 (平滑切换)</span></span><br><span class="line">    TIM_OC1PreloadConfig(TIM2, TIM_OCPreload_Enable);</span><br><span class="line">    TIM_ARRPreloadConfig(TIM2, ENABLE);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 6. 开启定时器</span></span><br><span class="line">    TIM_Cmd(TIM2, ENABLE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="主函数逻辑-实现开门模拟"><a href="#主函数逻辑-实现开门模拟" class="headerlink" title="主函数逻辑 (实现开门模拟)"></a>主函数逻辑 (实现开门模拟)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Lock</span><span class="params">(u8 enable)</span></span><br><span class="line"> &#123;</span><br><span class="line">     <span class="keyword">if</span>(enable)  <span class="comment">//开锁</span></span><br><span class="line">         TIM_SetCompare1(TIM2, <span class="number">1500</span>);<span class="comment">//设置占空比   500/2000 =25%</span></span><br><span class="line">     <span class="keyword">else</span>  <span class="comment">//锁上的状态</span></span><br><span class="line">         TIM_SetCompare1(TIM2, <span class="number">500</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><hr><h2 id="四、核心疑难解析"><a href="#四、核心疑难解析" class="headerlink" title="四、核心疑难解析"></a>四、核心疑难解析</h2><h3 id="1-普通定时器-vs-PWM输出"><a href="#1-普通定时器-vs-PWM输出" class="headerlink" title="1. 普通定时器 vs PWM输出"></a>1. 普通定时器 vs PWM输出</h3><p>这两个概念是包含关系：</p><table><thead><tr><th>功能模块</th><th>关注点</th><th>关键结构体</th><th>作用</th></tr></thead><tbody><tr><td>时基单元 (TimeBase)</td><td>频率、周期</td><td><code>TIM_TimeBaseInitTypeDef</code></td><td>相当于”秒表”，决定数数的快慢和上限。</td></tr><tr><td>输出比较 (OutputCompare)</td><td>占空比、极性</td><td><code>TIM_OCInitTypeDef</code></td><td>相当于”裁判”，根据秒表的数值决定何时输出高&#x2F;低电平。</td></tr></tbody></table><ul><li>总结：配置 PWM 必须先配置时基单元（定频率），再配置输出比较单元（定占空比）。</li></ul><h3 id="2-GPIO-复用功能-AFIO"><a href="#2-GPIO-复用功能-AFIO" class="headerlink" title="2. GPIO 复用功能 (AFIO)"></a>2. GPIO 复用功能 (AFIO)</h3><p>为什么 PA0 要设为 <code>GPIO_Mode_AF_PP</code> (复用推挽)?</p><ul><li>普通模式：GPIO 的高低电平由 <code>ODR</code> 寄存器控制（即代码里的 <code>GPIO_SetBits</code>）。</li><li>复用模式：GPIO 的控制权移交给了片上外设（这里是 TIM2）。</li><li>流程：TIM2 内部产生 PWM 信号 -&gt; 传递给复用控制器 -&gt; PA0 引脚输出。如果不开启复用，TIM2 产生的信号就无法传送到引脚上。</li></ul><hr><h2 id="五、关键配置参数速查表"><a href="#五、关键配置参数速查表" class="headerlink" title="五、关键配置参数速查表"></a>五、关键配置参数速查表</h2><table><thead><tr><th>参数名</th><th>解释</th><th>典型配置 (舵机)</th></tr></thead><tbody><tr><td><code>TIM_Period</code> (ARR)</td><td>周期：决定 PWM 的总时长</td><td>19999 (对应20ms)</td></tr><tr><td><code>TIM_Prescaler</code> (PSC)</td><td>分频：决定计数的快慢</td><td>71 (使计数频率为1MHz)</td></tr><tr><td><code>TIM_Pulse</code> (CCR)</td><td>脉宽：决定高电平时间</td><td>500<del>2500 (对应0.5</del>2.5ms)</td></tr><tr><td><code>TIM_OCMode</code></td><td>模式：PWM1 vs PWM2</td><td><code>TIM_OCMode_PWM1</code> (计数值&lt;CCR时有效)</td></tr><tr><td><code>TIM_OCPolarity</code></td><td>极性：有效电平是高还是低</td><td><code>TIM_OCPolarity_High</code></td></tr></tbody></table><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;定时器与舵机控制&quot;&gt;&lt;a href=&quot;#定时器与舵机控制&quot; class=&quot;headerlink&quot; title=&quot;定时器与舵机控制&quot;&gt;&lt;/a&gt;定时器与舵机控制&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;img src=&quot;https://5b9e583.webp.li</summary>
+      
+    
+    
+    
+    <category term="嵌入式之旅" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/"/>
+    
+    <category term="智能门锁" scheme="https://rosslin.xyz/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/"/>
+    
+    
+    <category term="学习笔记" scheme="https://rosslin.xyz/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="智能门锁" scheme="https://rosslin.xyz/tags/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>4.spi协议（LCD驱动）</title>
     <link href="https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/4.SPI%20%E5%8D%8F%E8%AE%AE%EF%BC%88LCD%20%E9%A9%B1%E5%8A%A8%EF%BC%89/"/>
     <id>https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B9%8B%E6%97%85/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/4.SPI%20%E5%8D%8F%E8%AE%AE%EF%BC%88LCD%20%E9%A9%B1%E5%8A%A8%EF%BC%89/</id>
@@ -451,6 +423,34 @@
     <category term="学习笔记" scheme="https://rosslin.xyz/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     <category term="智能门锁" scheme="https://rosslin.xyz/tags/%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2025年终总结</title>
+    <link href="https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    <id>https://rosslin.xyz/2025/12/22/%E6%96%87%E7%AB%A0/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</id>
+    <published>2025-12-22T02:00:00.000Z</published>
+    <updated>2026-01-27T16:11:26.464Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2025年终总结"><a href="#2025年终总结" class="headerlink" title="2025年终总结"></a>2025年终总结</h1><h2 id="关于家庭"><a href="#关于家庭" class="headerlink" title="关于家庭"></a>关于家庭</h2><p>每年的除夕，我们全家都会在我姐的张罗下拍全家福。但在2025年的开端，是个例外。</p><p>全家在低气压的状态中度过，我姐的工作面临变动，身体状况也亮起了红灯，这成了压在全家的一块巨石。</p><p>母亲的泪水留了又留，而作为家里最小的孩子，看着这一切，原来无能为力，才是最大的痛楚。在这</p><p>不过，好在这一切是短暂的，时间抚平了一切。</p><h2 id="大学生活"><a href="#大学生活" class="headerlink" title="大学生活"></a>大学生活</h2><p>大一的我，曾有个一段美好的志愿服务的时光，和小伙伴一起吃饭聊天 做游戏，做志愿，还有和舍友的爬山</p><p>不过美好的时光伴随着我转校区后戛然而止，所有的社会活动需要在新的环境下重新建立，也没有刚上大一时努力，开始渐渐迷上游戏、</p><p>后来我意识到不能再这样下去了。抱着空杯者的心态盲目目地去参加各种活动，我接触到了竞赛，进入了实验室，开始打各种各样的比赛</p><p>我很幸运，在2025年找到了自己的方向</p><h2 id="兼职"><a href="#兼职" class="headerlink" title="兼职"></a>兼职</h2><p>回看这一年，我是个身兼数职的牛马，食堂的早餐店，学校的器材室，在往前看，在小学门口发传单，寒暑假流水线上把一生都想明白的一天又一天，现在想想，我得给那个不知疲倦的自己敬个礼。，天生的牛马体。</p><p>不过，在明确了发展方向后，我开始意识到：单纯出卖体力的勤奋，失去了很多机会成本。</p><p>虽然这是一份没有报酬、仅包一餐的实习，但我心里的算盘打得很响：这既给了我正当理由在家休整，避开无效的体力劳动；又能申请“优秀个人”荣誉，成为我争取奖学金的重要筹码。</p><p>与其做些出卖体力的劳动 不如花时间投资自己去成长</p><h2 id="旅游"><a href="#旅游" class="headerlink" title="旅游"></a>旅游</h2><p>这一年我是幸福的</p><p>我去了香港研学。那五天是极限的：熬夜做PPT、维多利亚港的街头采访、港科大的调研。我也去了山西太原参加线下比赛，与其说是参加比赛，不如说是去旅游，完成了人生第一次租车自驾去到五台山，去了一些比较网红的商业街参加西门子杯全国总决赛。 </p><h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><p> 但我记得最深的，不是风景，而是一个瞬间。 那是我留校参加比赛夜晚回宿舍的路上，没有路灯，漆黑一片。一个女生独自坐在路中间的石墩上，掩面哭泣。 在这个时代，每个人都在负重前行，每个人都有深夜里说不出口的苦。 这一幕让我明白，技术之外，人更需要悲悯。</p><p>我们除了选择努力 别无选择。</p><h2 id="孤独"><a href="#孤独" class="headerlink" title="孤独"></a>孤独</h2><p>回顾这一年，“孤独”似乎是我的高频词。但我并不讨厌它。</p><p>我慢慢发现，自己拥有一种“屏蔽力”。我不会因为没人陪而放弃我想考的证，也不会因为要去陌生的城市而退缩。</p><p>印象最深的是西门子杯的全国总决赛。队伍里10个人，9个是谈笑风生的大四学长，只有我是大三的“孤勇者”。 我到现在都还清晰地记得去山西的前一晚：实验室空荡荡的，只有我一个人守着电脑和还没打样的PCB板。为了赶最早的一班车，我甚至来不及回宿舍，天还没亮就要跑去校外的站点拿快递。</p><p>那时候天很黑，风很冷，心里说不慌是假的。但当我一个人搞定所有突发状况站在赛场上时，我突然觉得，这种“不容易”恰恰是我成长的勋章。原来，一个人也可以是一支队伍。</p><h2 id="展望2026"><a href="#展望2026" class="headerlink" title="展望2026"></a>展望2026</h2><p>如果要给 2026 年定一个关键词，我希望是——勇敢。</p><p>2025 年的经验证明：行动往往止步于过度的思考。 </p><p>很多时候，机会的窗口期极短，而我总在迟疑过后陷入遗憾。不推开门，答案就永远包裹在黑盒里。</p><p>对我而言，世界上最痛苦的莫过于“遗憾”。在“如果当初”与“确定的结果（成功或失败、甜蜜或苦涩）”之间，我更愿意选择后者。</p><p>过去这一年，那些真正让我获得成长的瞬间，其实都挺“莽”的。</p><p>展望 2026，这将是我至关重要的一年：上半年冲刺大学竞赛，下半年开启职场实习。</p><p>勇敢的人未必先享受世界，但勇敢的人一定拥有更多的机会与可能。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;2025年终总结&quot;&gt;&lt;a href=&quot;#2025年终总结&quot; class=&quot;headerlink&quot; title=&quot;2025年终总结&quot;&gt;&lt;/a&gt;2025年终总结&lt;/h1&gt;&lt;h2 id=&quot;关于家庭&quot;&gt;&lt;a href=&quot;#关于家庭&quot; class=&quot;headerlink&quot; </summary>
+      
+    
+    
+    
+    <category term="闲言碎语" scheme="https://rosslin.xyz/categories/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+    
+    <category term="年终总结" scheme="https://rosslin.xyz/categories/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="闲言碎语" scheme="https://rosslin.xyz/tags/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+    
+    <category term="年终总结" scheme="https://rosslin.xyz/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
